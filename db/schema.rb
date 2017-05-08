@@ -20,17 +20,17 @@ ActiveRecord::Schema.define(version: 20170508183031) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pictures", force: :cascade do |t|
-    t.string "image_url"
-    t.string "title"
-    t.integer "user_id"
+  create_table "picture_tags", force: :cascade do |t|
+    t.integer "picture_id"
+    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pictures_tags", force: :cascade do |t|
-    t.integer "picture_id"
-    t.integer "tag_id"
+  create_table "pictures", force: :cascade do |t|
+    t.string "image_url"
+    t.string "title"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
