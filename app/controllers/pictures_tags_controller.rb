@@ -1,0 +1,2 @@
+class PicturesTagsController < ApplicationController
+end
