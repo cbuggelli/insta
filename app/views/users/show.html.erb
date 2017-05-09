@@ -1,5 +1,6 @@
 <h1>User page</h1>
 <p> <h3> Username: </h3>
 <%= @user.username %> </p> <br>
-<p> <h3> Email: </h3>
-<%= @user.email %> </p> <br>
+<p> <h3> Email: </h3><%= @user.email %> </p> <br>
+
+<%= link_to "Add a Picture", new_picture_path %>

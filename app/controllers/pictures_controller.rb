@@ -11,7 +11,7 @@ class PicturesController < ApplicationController
   end
 
   def show
-    byebug
+    # byebug
     @picture = Picture.find(params[:id])
   end
 
