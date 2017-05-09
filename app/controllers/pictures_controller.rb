@@ -1,29 +1,34 @@
 class PicturesController < ApplicationController
-  def new
-    @picture = Picture.new
 
-  end
+ def index
+   @pictures = Picture.all
+ end
 
-  def create
-    # byebug
-    @picture = Picture.create(picture_params[:id])
-    redirect_to new_picture_path(@picture) unless @picture.save
-  end
+ def new
+   @picture = Picture.new
+ end
 
-  def show
-    # byebug
-    @picture = Picture.find(params[:id])
-  end
+ def create
 
-  def destroy
-    @picture.delete
-  end
+   @picture = Picture.create(picture_params(:id,))
+   byebug
+   redirect_to new_picture_path(@picture) unless @picture.save
+ end
 
-  private
+ def show
+   # byebug
+   @picture = Picture.find(params[:id])
+ end
 
-  def picture_params
-    params.require(:picture).permit(:image_url, :title, :user_id)
+ def destroy
+   @picture.delete
+ end
 
-  end
+ private
+
+ def picture_params (*args)
+   params.require(:picture).permit(*args)
+
+ end
 
 end
