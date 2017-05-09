@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     @user = User.create(user_params)
     # byebug
+    session[:user_id] = @user.id
     if @user.save
       redirect_to user_path(@user)
     else
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
   def show
     # byebug
     @user = User.find(params[:id])
+    @pictures = @user.pictures
   end
 
   def destroy

@@ -1,7 +1,15 @@
 <%= flash[:notice] %>
-<h1>User page</h1>
-<p> <h3> Username: </h3>
-<%= @user.username %> </p> <br>
-<p> <h3> Email: </h3><%= @user.email %> </p> <br>
+<h4>Home</h4>
 
-<%= link_to "Add a Picture", new_picture_path %>
+<h1><%= @user.username %></h1> <br>
+<p><%= @user.email %> </p> <br>
+
+<h1><%= link_to "Add a Picture", new_picture_path %></h1>
+
+<% @pictures.each do |picture|%>
+<h3><%= picture.title %></h3>
+<%= image_tag picture.image_url %>
+
+
+
+<% end %>

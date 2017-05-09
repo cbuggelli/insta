@@ -9,10 +9,16 @@ class PicturesController < ApplicationController
  end
 
  def create
+# byebug
+   @picture = Picture.new(picture_params)
+   @picture.user_id = current_user.id
+   @picture.save
 
-   @picture = Picture.create(picture_params(:id,))
-   byebug
-   redirect_to new_picture_path(@picture) unless @picture.save
+  #  @picture.id = picture_params[:id]
+
+  #  redirect_to new_picture_path(@picture) unless @picture.save
+   redirect_to picture_path(@picture)
+
  end
 
  def show
@@ -26,8 +32,8 @@ class PicturesController < ApplicationController
 
  private
 
- def picture_params (*args)
-   params.require(:picture).permit(*args)
+ def picture_params
+   params.require(:picture).permit(:image_url, :title)
 
  end
 
