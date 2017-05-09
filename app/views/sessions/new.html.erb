@@ -1,0 +1,10 @@
+<h1>Log In</h1>
+<%= flash[:notice] %>
+
+<%= form_tag login_path do %>
+  <%= label_tag 'Username'%>
+  <%= text_field_tag 'user[name]' %><br/>
+  <%= label_tag 'Password'%>
+  <%= password_field_tag 'user[password]' %><br/>
+  <%= submit_tag "Log In" %>
+<% end %>

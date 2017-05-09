@@ -6,12 +6,18 @@ class UsersController < ApplicationController
   end
 
   def create
+
+    @user = User.create(user_params)
     # byebug
-    @user = User.create(user_params[:id])
-    redirect_to user_path(@user) unless @user.save
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def show
+    # byebug
     @user = User.find(params[:id])
   end
 
