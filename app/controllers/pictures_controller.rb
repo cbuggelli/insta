@@ -10,7 +10,7 @@ class PicturesController < ApplicationController
 
   def create
 
-    @picture = Picture.create(picture_params[:id])
+    @picture = Picture.create(picture_params(:id,))
     byebug
     redirect_to new_picture_path(@picture) unless @picture.save
   end

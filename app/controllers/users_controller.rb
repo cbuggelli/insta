@@ -6,13 +6,12 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.create(user_params)
     # byebug
-    if @user.save
+    if @user.valid?
       redirect_to user_path(@user)
     else
-      render :new
+      redirect_to '/users/new'
     end
   end
 
