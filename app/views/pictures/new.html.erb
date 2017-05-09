@@ -1,5 +1,5 @@
 <h1>Add a Picture</h1>
-<%= form_for Picture.new do |f| %>
+<%= form_for @picture do |f| %>
   <%= f.label :image_url %>
   <%= f.text_field :image_url %>
   <%= f.label :title %>
