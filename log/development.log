@@ -2975,3 +2975,432 @@ ActionView::Template::Error (undefined local variable or method `logout_path' fo
     18:       <% end %>
   
 app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__1641427548536265397_70099614763140'
+Started GET "/login" for 127.0.0.1 at 2017-05-09 13:52:15 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 665ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x007f87c91c9b18>:0x007f87cd831268>):
+    11:     <ul>
+    12:       <% if logged_in? %>
+    13:         <li>Welcome, <%= current_user.username %> </li>
+    14:         <li><%= link_to "Log Out", logout_path, method: 'DELETE' %> </li>
+    15:       <% else %>
+    16:         <li><%= link_to "Login", login_path %> </li>
+    17:       <% end %>
+  
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___4569464628990225729_70110622690580'
+Started GET "/login" for 127.0.0.1 at 2017-05-09 13:52:40 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+    4:     <title>Insta</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8:   </head>
+    9: 
+   10:   <body>
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4569464628990225729_70110587446160'
+Started GET "/login" for 127.0.0.1 at 2017-05-09 13:54:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1274ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x007f87c91c9b18>:0x007f87ca50ca68>):
+    11:     <ul>
+    12:       <% if logged_in? %>
+    13:         <li>Welcome, <%= current_user.username %> </li>
+    14:         <li><%= link_to "Log Out", logout_path, method: 'DELETE' %> </li>
+    15:       <% else %>
+    16:         <li><%= link_to "Login", login_path %> </li>
+    17:       <% end %>
+  
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___4569464628990225729_70110641875280'
+Started GET "/login" for 127.0.0.1 at 2017-05-09 13:56:57 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-05-09 13:57:13 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N38lWORw3H1e3RjAIDIRuzpog3susirkhlzYCQaJfpVWhD0bW86JPPNPNz+vHjsYenE3qTQnTq6Zg9L9IC5tdA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-09 13:57:13 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-09 13:57:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7VG8WZGhhbdkJu207KaTpRUVgMx3CZUfAQ2jkHQsWe0XdiV9RF3gSXTroEXayC4F7l5yEt342n3C+n/KOpF7BA==", "user"=>{"name"=>"matt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "matt"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/37
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/37" for 127.0.0.1 at 2017-05-09 13:57:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170508182545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "username" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170508182545"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePictures (20170508182806)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_url" varchar, "title" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170508182806"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTags (20170508182845)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170508182845"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePictureTags (20170508182926)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "picture_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "picture_id" integer, "tag_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170508182926"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20170508183031)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "user_id" integer, "picture_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170508183031"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-09 18:03:22.415798"], ["updated_at", "2017-05-09 18:03:22.415798"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "user1@example.com"], ["username", "user1"], ["password_digest", "$2a$10$rAbYhUmNw9L2KrvMTpTbPeFoNm/8vAdrGLobI.llK4WiKUP6laZ.2"], ["created_at", "2017-05-09 18:03:31.071596"], ["updated_at", "2017-05-09 18:03:31.071596"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "user2@example.com"], ["username", "user2"], ["password_digest", "$2a$10$9eUOEvAqjQ9UEGlIP2ZUCuoIF2ucMdHN.a3gvGgF9u6VI30YNOcHC"], ["created_at", "2017-05-09 18:03:31.191567"], ["updated_at", "2017-05-09 18:03:31.191567"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "user3@example.com"], ["username", "user3"], ["password_digest", "$2a$10$f8AmZuxPt6hImv8e3xNdZOx0/W.hGpsfGJvUp/D4KyskM4AyGREfm"], ["created_at", "2017-05-09 18:03:31.300461"], ["updated_at", "2017-05-09 18:03:31.300461"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nature"], ["created_at", "2017-05-09 18:03:31.334454"], ["updated_at", "2017-05-09 18:03:31.334454"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "NYC"], ["created_at", "2017-05-09 18:03:31.338135"], ["updated_at", "2017-05-09 18:03:31.338135"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Art"], ["created_at", "2017-05-09 18:03:31.341727"], ["updated_at", "2017-05-09 18:03:31.341727"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Humor"], ["created_at", "2017-05-09 18:03:31.346059"], ["updated_at", "2017-05-09 18:03:31.346059"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pictures" ("image_url", "title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["image_url", "http://www.defenders.org/sites/default/files/styles/large/public/dolphin-kristian-sekulic-isp.jpg"], ["title", "Saw a dolphin!"], ["user_id", 1], ["created_at", "2017-05-09 18:03:31.417701"], ["updated_at", "2017-05-09 18:03:31.417701"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pictures" ("image_url", "title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["image_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Water_buffaloes_in_Wuyishan_Wufu_2012.08.24_15-46-30.jpg/1024px-Water_buffaloes_in_Wuyishan_Wufu_2012.08.24_15-46-30.jpg"], ["title", "Water Buffalo!"], ["user_id", 1], ["created_at", "2017-05-09 18:03:31.425816"], ["updated_at", "2017-05-09 18:03:31.425816"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pictures" ("image_url", "title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["image_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Water_buffaloes_in_Wuyishan_Wufu_2012.08.24_15-46-30.jpg/1024px-Water_buffaloes_in_Wuyishan_Wufu_2012.08.24_15-46-30.jpg"], ["title", "Another Water Buffalo!"], ["user_id", 1], ["created_at", "2017-05-09 18:03:31.432223"], ["updated_at", "2017-05-09 18:03:31.432223"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" ORDER BY "pictures"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "picture_tags" ("picture_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["picture_id", 3], ["tag_id", 2], ["created_at", "2017-05-09 18:03:31.474561"], ["updated_at", "2017-05-09 18:03:31.474561"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" ORDER BY "pictures"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "picture_tags" ("picture_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["picture_id", 1], ["tag_id", 2], ["created_at", "2017-05-09 18:03:31.485772"], ["updated_at", "2017-05-09 18:03:31.485772"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" ORDER BY "pictures"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "picture_tags" ("picture_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["picture_id", 2], ["tag_id", 1], ["created_at", "2017-05-09 18:03:31.501946"], ["updated_at", "2017-05-09 18:03:31.501946"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2017-05-09 14:06:17 -0400
+Started GET "/users/new" for 127.0.0.1 at 2017-05-09 14:06:17 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (19.5ms)
+  Rendered users/new.html.erb within layouts/application (30.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 646ms (ActiveRecord: 0.4ms)
+
+
+  
+Completed 500 Internal Server Error in 665ms (ActiveRecord: 1.2ms)
+
+
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+  
+    10:   <body>
+    11:     <ul>
+    12:       <% if logged_in? %>
+    13:         <li>Welcome, <%= current_user.username %> </li>
+    14:         <li><%= link_to "Log Out", logout_path, method: 'DELETE' %> </li>
+    15:       <% else %>
+    16:         <li><%= link_to "Login", login_path %> </li>
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+  
+    10:   <body>
+    11:     <ul>
+    12:       <% if logged_in? %>
+    13:         <li>Welcome, <%= current_user.username %> </li>
+    14:         <li><%= link_to "Log Out", logout_path, method: 'DELETE' %> </li>
+    15:       <% else %>
+    16:         <li><%= link_to "Login", login_path %> </li>
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___693388696179970027_70314742649280'
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___693388696179970027_70314742649280'
+Started GET "/users/new" for 127.0.0.1 at 2017-05-09 14:08:57 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (23.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 383ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    10:   <body>
+    11:     <ul>
+    12:       <% if logged_in? %>
+    13:         <li>Welcome, <%= current_user.username %> </li>
+    14:         <li><%= link_to "Log Out", logout_path, method: 'DELETE' %> </li>
+    15:       <% else %>
+    16:         <li><%= link_to "Login", login_path %> </li>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2940290684741155590_70337363377420'
+Started GET "/users/login" for 127.0.0.1 at 2017-05-09 14:11:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:21:in `show'
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:11:10 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    10:   <body>
+    11:     <ul>
+    12:       <% if logged_in? %>
+    13:         <li>Welcome, <%= current_user.username %> </li>
+    14:         <li><%= link_to "Log Out", logout_path, method: 'DELETE' %> </li>
+    15:       <% else %>
+    16:         <li><%= link_to "Login", login_path %> </li>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2940290684741155590_70337359534320'
+Started GET "/users/new" for 127.0.0.1 at 2017-05-09 14:14:53 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2017-05-09 14:15:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:21:in `show'
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:15:06 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 63ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:15:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-09 14:15:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-09 14:15:41 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c9zojPXPQ47Pp3Gsj5ZXRGI67Uc10RKzrnSW+9DTlmOJ+3GoIDMmcN9qPF25+OrkmXEfmZ8gXdFtg0qhnm60ig==", "user"=>{"username"=>"AAA", "password"=>"[FILTERED]", "email"=>"AAA"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "AAA"], ["username", "AAA"], ["password_digest", "$2a$10$HZZykyWVvZ3G485RIJswoe0qJQqW5hLpZ8yO9iETZcfDngQhs2Gbe"], ["created_at", "2017-05-09 18:15:41.734077"], ["updated_at", "2017-05-09 18:15:41.734077"]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2017-05-09 14:16:26 -0400
+Completed 500 Internal Server Error in 44741ms (ActiveRecord: 9.9ms)
+
+
+Processing by UsersController#new as HTML
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:12:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 1981ms (Views: 1961.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-09 14:16:37 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bfSePeSdcZzTzp0XzVjL1aIhD4+GVOqFDBeH+B7/LVmX0wcZMWEUYsMD0Ob7NnZ1WWr9USylpefP4FuiUEIPsA==", "user"=>{"username"=>"AAA", "password"=>"[FILTERED]", "email"=>"AAA"}, "commit"=>"Create User"}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "AAA"], ["username", "AAA"], ["password_digest", "$2a$10$WMgTuZ2yOm8nxWqTNhXBi.3eVvnCgQQvzFIzgjhJB8lPEq64M1VPC"], ["created_at", "2017-05-09 18:16:40.040048"], ["updated_at", "2017-05-09 18:16:40.040048"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 438ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2017-05-09 14:16:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 618ms (Views: 570.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:16:51 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.2ms)
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:16:52 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 1307ms (Views: 1273.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1215ms (Views: 1191.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-09 14:16:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E1qLFjsjcH1UepxMwcru6Q1lDaUFIqPVrmOKXcLRi2fpfRIy7t8Vg0S30b33pFNJ9i7/e6/T7LdtlFYHjGypjg==", "user"=>{"name"=>"AAA", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "AAA"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1313ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<SessionsController:0x007ff15ecab4b0>
+Did you mean?  @user):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2017-05-09 14:17:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E1qLFjsjcH1UepxMwcru6Q1lDaUFIqPVrmOKXcLRi2fpfRIy7t8Vg0S30b33pFNJ9i7/e6/T7LdtlFYHjGypjg==", "user"=>{"name"=>"AAA", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "AAA"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 372ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:17:47 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 688ms (Views: 669.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-09 14:17:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w5sA3fwR5Wq2M4WRMteVWe1AtxYwiHeqYTJ6qO7C41U5vJn5Ke2AlKb+yGAEuSj5FgtFyJp5OMiixabyoH/BvA==", "user"=>{"name"=>"AAA", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "AAA"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 149ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-09 14:17:53 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 686ms (Views: 656.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-09 14:18:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IGfwesaI3ECmaP1v06hVZXCqQvGkRXsZUTFtSSnMz0zaQGleE3S5vralsJ7lxujFi+GwLw60NHuSxrETZ3HtpQ==", "user"=>{"name"=>"AAA", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "AAA"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 134ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2017-05-09 14:18:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 679ms (Views: 622.3ms | ActiveRecord: 2.2ms)
+
+
