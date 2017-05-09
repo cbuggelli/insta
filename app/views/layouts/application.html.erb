@@ -9,7 +9,7 @@
 
   <body>
     <% if flash[:notice] %>
-      <h1><%= flash[:notice] %></h1>
+      <%= flash[:notice] %>
     <% end %>
     <%= yield %>
 

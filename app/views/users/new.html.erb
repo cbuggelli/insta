@@ -1,5 +1,5 @@
-<h1>heyyyyyy</h1>
-
+<h1>Create a user</h1>
+<%= flash[:notice] %>
 <%= form_for @user do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %><br/>
@@ -9,5 +9,5 @@
   <%= f.password_field :password_confirmation %><br/>
   <%= f.label :email %>
   <%= f.text_field :email %><br/>
-  <%= f.submit %>
+  <%= f.submit "Create User" %>
 <% end %>
