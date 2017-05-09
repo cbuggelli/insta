@@ -3,10 +3,3 @@
 <%= image_tag @picture.image_url %>
 <br><br><br>
 <%= link_to "Back", new_picture_path %>
-
-<% @pictures.each do |picture|%>
-<%= image_tag picture.image_url %>
-<br>
-<%= picture.title %>
-
-<% end %>
