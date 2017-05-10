@@ -1,6 +1,13 @@
 <h2><%= @picture.title %></h2>
 <%= link_to "Edit title", edit_picture_path %>
 
+<h3>Add a tag</h3>
+<%= form_for @tag, url: tags_path(@picture) do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.submit "Submit" %>
+<% end %>
+
 <br><br><br>
 <%= image_tag @picture.image_url %>
 <br><br><br>

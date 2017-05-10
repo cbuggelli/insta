@@ -6018,3 +6018,182 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 65ms (Views: 56.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 13:42:56 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 420ms (Views: 385.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-10 13:43:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-10 13:44:43 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 271ms (Views: 255.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-10 13:44:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kfjg6w38aW5ZaAQoWsoS9htMZy90vammfqtdKekE8qrKe8X6etaG/QdhqVjuNKNMc74M0fbMyiCm3QfXh5Peag==", "user"=>{"name"=>"Donald Trump", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Donald Trump"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 146ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2017-05-10 13:44:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered users/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 88ms (Views: 57.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2017-05-10 13:45:00 -0400
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 72ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2017-05-10 13:46:07 -0400
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/new.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `tag' for #<Picture:0x007fbf0977b940>
+Did you mean?  tags
+               tags=
+               tag_ids
+               tag_ids=
+               tap):
+     5:   <%= f.label :title %>
+     6:   <%= f.text_field :title %>
+     7:   <%= f.label :tag %>
+     8:   <%= f.text_field :tag %>
+     9:   <%= f.submit %>
+    10: <% end %>
+  
+app/views/pictures/new.html.erb:8:in `block in _app_views_pictures_new_html_erb___2843748439843060787_70229237203300'
+app/views/pictures/new.html.erb:2:in `_app_views_pictures_new_html_erb___2843748439843060787_70229237203300'
+Started POST "/login" for 127.0.0.1 at 2017-05-10 13:47:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kfjg6w38aW5ZaAQoWsoS9htMZy90vammfqtdKekE8qrKe8X6etaG/QdhqVjuNKNMc74M0fbMyiCm3QfXh5Peag==", "user"=>{"name"=>"Donald Trump", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Donald Trump"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 102ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2017-05-10 13:47:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2017-05-10 13:47:04 -0400
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/new.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `tag' for #<Picture:0x007fbf0ac6ccc8>
+Did you mean?  tags
+               tags=
+               tag_ids
+               tag_ids=
+               tap):
+     5:   <%= f.label :title %>
+     6:   <%= f.text_field :title %>
+     7:   <%= f.label :tag %>
+     8:   <%= f.text_field :tag %>
+     9:   <%= f.submit %>
+    10: <% end %>
+  
+app/views/pictures/new.html.erb:8:in `block in _app_views_pictures_new_html_erb___2843748439843060787_70229269377660'
+app/views/pictures/new.html.erb:2:in `_app_views_pictures_new_html_erb___2843748439843060787_70229269377660'
+Started GET "/pictures/new" for 127.0.0.1 at 2017-05-10 13:47:49 -0400
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/new.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture_tag' for #<Picture:0x007fbf10147c98>
+Did you mean?  picture_tags
+               picture_tags=):
+     5:   <%= f.label :title %>
+     6:   <%= f.text_field :title %>
+     7:   <%= f.label :picture_tag %>
+     8:   <%= f.text_field :picture_tag %>
+     9:   <%= f.submit %>
+    10: <% end %>
+  
+app/views/pictures/new.html.erb:8:in `block in _app_views_pictures_new_html_erb___2843748439843060787_70229292659340'
+app/views/pictures/new.html.erb:2:in `_app_views_pictures_new_html_erb___2843748439843060787_70229292659340'
+Started GET "/pictures/new" for 127.0.0.1 at 2017-05-10 14:02:11 -0400
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 77ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures/1" for 127.0.0.1 at 2017-05-10 14:02:17 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPicture Load (1.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: <%= link_to "Edit title", edit_picture_path %>
+    3: 
+    4: <h3>Add a tag</h3>
+    5: <%= form_for @tag, url: tags_path(@picture) do |f| %>
+    6:   <%= f.label :content %>
+    7:   <%= f.text_area :content %>
+    8:   <%= f.submit "Submit" %>
+  
+app/views/pictures/show.html.erb:5:in `_app_views_pictures_show_html_erb__3693002804294661772_70229294596180'
+Started GET "/pictures/19" for 127.0.0.1 at 2017-05-10 14:02:17 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: <%= link_to "Edit title", edit_picture_path %>
+    3: 
+    4: <h3>Add a tag</h3>
+    5: <%= form_for @tag, url: tags_path(@picture) do |f| %>
+    6:   <%= f.label :content %>
+    7:   <%= f.text_area :content %>
+    8:   <%= f.submit "Submit" %>
+  
+app/views/pictures/show.html.erb:5:in `_app_views_pictures_show_html_erb__3693002804294661772_70229310446860'
