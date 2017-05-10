@@ -1,6 +1,7 @@
 <% @pictures.each do |picture|%>
 <%= image_tag picture.image_url %>
 <br>
-<%= picture.title %>
+<h3><%= link_to "#{picture.title}", picture_path(picture) %></h3>
+
 
 <% end %>
