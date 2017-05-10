@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :pictures
   has_many :comments
-  validates :username, presence: true { message: "Must have name" }
+  validates :username, presence: true
   validates :password, presence: true
   validates :email, inclusion: {in: ['@']}
 

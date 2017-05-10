@@ -4707,3 +4707,1314 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 761ms (Views: 552.5ms | ActiveRecord: 10.4ms)
 
 
+Started GET "/pictures/2" for 127.0.0.1 at 2017-05-10 11:13:49 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 2]]
+  Rendered pictures/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 258ms (Views: 219.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pictures/2" for 127.0.0.1 at 2017-05-10 11:14:19 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 2]]
+  Rendered pictures/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pictures/2" for 127.0.0.1 at 2017-05-10 11:19:18 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 2]]
+  Rendered pictures/show.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 282ms (Views: 245.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pictures/2" for 127.0.0.1 at 2017-05-10 11:19:52 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 2]]
+  Rendered pictures/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:20:04 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PvFTHlku30z59TIsGbdoySJI3qbV0rR2JLemds2Asx2MmJJDTs325N4pgHm1C9l9hynsiclSI6TW5YTeJhAIwA==", "comment"=>{"content"=>"wtf is this"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/comments_controller.rb:11:in `create'
+Started GET "/comments/new" for 127.0.0.1 at 2017-05-10 11:20:21 -0400
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-10 11:20:32 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-10 11:20:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VFysDkUV4MS0NkJhfAXUfcIgeYwBXwFeazosasjjaYrmNW1TUvbJbJPq8DTQuWXJZ0FLox3floyZaA7CI3PSVw==", "user"=>{"name"=>"Bob Ross", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/vkoukoul/Development/Projects/insta/app/models/user.rb:5: syntax error, unexpected '{', expecting keyword_end
+  validates :username, presence: true { message: "Must have name" }
+                                       ^
+/Users/vkoukoul/Development/Projects/insta/app/models/user.rb:5: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/user.rb:5: syntax error, unexpected '{', expecting keyword_end
+app/models/user.rb:5: syntax error, unexpected '}', expecting keyword_end
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for 127.0.0.1 at 2017-05-10 11:21:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VFysDkUV4MS0NkJhfAXUfcIgeYwBXwFeazosasjjaYrmNW1TUvbJbJPq8DTQuWXJZ0FLox3floyZaA7CI3PSVw==", "user"=>{"name"=>"Bob Ross", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bob Ross"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 81ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-05-10 11:21:13 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 9]]
+  Rendered users/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 60ms (Views: 43.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/picture/4" for 127.0.0.1 at 2017-05-10 11:21:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/picture/4"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pictures/4" for 127.0.0.1 at 2017-05-10 11:21:34 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Picture with 'id'=4):
+  
+app/controllers/pictures_controller.rb:25:in `show'
+Started GET "/pictures/2" for 127.0.0.1 at 2017-05-10 11:21:39 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 2]]
+  Rendered pictures/show.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:21:45 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s24ZDh5NgGw1DiiYhFA0X7j8/7HaXuAbWFhf43OjYaQBB9hTCa6pxBLSms0o7IXrHZ3Nnsbed8mqCn1LmDPaeQ==", "comment"=>{"content"=>"Garbage"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/comments_controller.rb:11:in `create'
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:22:46 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s24ZDh5NgGw1DiiYhFA0X7j8/7HaXuAbWFhf43OjYaQBB9hTCa6pxBLSms0o7IXrHZ3Nnsbed8mqCn1LmDPaeQ==", "comment"=>{"content"=>"Garbage"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 122267ms (ActiveRecord: 1.1ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:12:in `create'
+Started GET "/pictures/new" for 127.0.0.1 at 2017-05-10 11:24:59 -0400
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/new.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 607ms (Views: 466.5ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2017-05-10 11:25:36 -0400
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FM5FSrBBY0xLYKSSlTjCv97BaLRuCoRWz3vCnHcG766mp4QXp6JK5Gy8Fsc5hHMLe6Bam3KKE4Q9KeA0nJZUcw==", "picture"=>{"image_url"=>"http://i0.kym-cdn.com/photos/images/facebook/000/953/953/33f.jpg", "title"=>"Art"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "pictures" ("image_url", "title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["image_url", "http://i0.kym-cdn.com/photos/images/facebook/000/953/953/33f.jpg"], ["title", "Art"], ["user_id", 9], ["created_at", "2017-05-10 15:25:36.773614"], ["updated_at", "2017-05-10 15:25:36.773614"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pictures/27
+Completed 302 Found in 255ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/pictures/27" for 127.0.0.1 at 2017-05-10 11:25:36 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mPicture Load (1.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 27]]
+  Rendered pictures/show.html.erb within layouts/application (92.9ms)
+Completed 200 OK in 615ms (Views: 587.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/comments/new" for 127.0.0.1 at 2017-05-10 11:25:54 -0400
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 495ms (Views: 482.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments/new" for 127.0.0.1 at 2017-05-10 11:25:59 -0400
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 490ms (Views: 477.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments/new" for 127.0.0.1 at 2017-05-10 11:26:11 -0400
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 486ms (Views: 474.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-05-10 11:26:31 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.1.0) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.0) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.0) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.0) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.0) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.0) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.0) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.0) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.2) lib/rack/etag.rb:25:in `call'
+rack (2.0.2) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.2) lib/rack/head.rb:12:in `call'
+rack (2.0.2) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.2) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.0) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.0) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-10 11:26:39 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 503ms (Views: 479.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-10 11:26:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0CuUND0O0BMDVTfQHLvtEE2Jz/TTu9juZb4NtTTSTNViQlVpKu35uySJhYWwB1yk6Oj92887TzyX7C8d30L3CA==", "user"=>{"name"=>"Bob Ross", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bob Ross"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 107ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-05-10 11:26:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (10.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 9]]
+  Rendered users/show.html.erb within layouts/application (116.8ms)
+Completed 200 OK in 607ms (Views: 563.5ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/pictures/24" for 127.0.0.1 at 2017-05-10 11:28:12 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mPicture Load (1.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 24]]
+  Rendered pictures/show.html.erb within layouts/application (240.4ms)
+Completed 200 OK in 1019ms (Views: 727.7ms | ActiveRecord: 21.6ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:28:21 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jV+3rRBWLycrP0oZXAUnLbq5hjxxMNWsBWqrPSEhdKU/NnbwB7UGjwzj+EzwuZaZH9i0E22wQn73OImVyrHPeA==", "comment"=>{"content"=>"Ugly"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22234ms (ActiveRecord: 0.7ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:12:in `create'
+Started GET "/picutre/29" for 127.0.0.1 at 2017-05-10 11:28:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/picutre/29"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/picutre/22" for 127.0.0.1 at 2017-05-10 11:29:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/picutre/22"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/picutre/10" for 127.0.0.1 at 2017-05-10 11:29:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/picutre/10"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/picutres/10" for 127.0.0.1 at 2017-05-10 11:29:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/picutres/10"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pictures/10" for 127.0.0.1 at 2017-05-10 11:29:23 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPicture Load (2.9ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 10]]
+  Rendered pictures/show.html.erb within layouts/application (253.7ms)
+Completed 200 OK in 1006ms (Views: 744.4ms | ActiveRecord: 30.4ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:29:30 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a+aJfqKphF//95clxUv6pjJyaitYC245IQ7S6FGhiQrZj0gjtUqt99grJXBp90sSlxNYBESL+evTXPBAujEy1w==", "comment"=>{"content"=>"Dislike"}, "commit"=>"Submit"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 11.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"pictures", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:30:21 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a+aJfqKphF//95clxUv6pjJyaitYC245IQ7S6FGhiQrZj0gjtUqt99grJXBp90sSlxNYBESL+evTXPBAujEy1w==", "comment"=>{"content"=>"Dislike"}, "commit"=>"Submit"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 502ms (ActiveRecord: 19.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"pictures", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:31:04 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a+aJfqKphF//95clxUv6pjJyaitYC245IQ7S6FGhiQrZj0gjtUqt99grJXBp90sSlxNYBESL+evTXPBAujEy1w==", "comment"=>{"content"=>"Dislike"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 553ms (ActiveRecord: 20.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:31:32 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a+aJfqKphF//95clxUv6pjJyaitYC245IQ7S6FGhiQrZj0gjtUqt99grJXBp90sSlxNYBESL+evTXPBAujEy1w==", "comment"=>{"content"=>"Dislike"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 254260ms (ActiveRecord: 32.1ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:35:54 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a+aJfqKphF//95clxUv6pjJyaitYC245IQ7S6FGhiQrZj0gjtUqt99grJXBp90sSlxNYBESL+evTXPBAujEy1w==", "comment"=>{"content"=>"Dislike"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 331683ms (ActiveRecord: 20.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:15:in `create'
+Started GET "/pictures/12" for 127.0.0.1 at 2017-05-10 11:41:39 -0400
+  
+ArgumentError (Invalid route name, already in use: 'new_comment' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:12:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/pictures/12" for 127.0.0.1 at 2017-05-10 11:42:08 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPicture Load (1.6ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 10.8ms)
+
+
+  
+SyntaxError (/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+...er.append=  form_for (@picture, url: new_comment, html: {met...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+...comment, html: {method:'POST'}) do |f| @output_buffer.safe_a...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started POST "/comments" for 127.0.0.1 at 2017-05-10 11:43:46 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/comments"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pictures/12" for 127.0.0.1 at 2017-05-10 11:43:55 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPicture Load (2.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 23.2ms)
+
+
+  
+SyntaxError (/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+...er.append=  form_for (@picture, url: new_comment, html: {met...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+...comment, html: {method:'POST'}) do |f| @output_buffer.safe_a...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/pictures/12" for 127.0.0.1 at 2017-05-10 11:51:03 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPicture Load (1.6ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 416ms (ActiveRecord: 20.0ms)
+
+
+  
+SyntaxError (/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+...er.append=  form_for (@picture, url: new_comment, html: {met...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+...comment, html: {method:'POST'}) do |f| @output_buffer.safe_a...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:51:28 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (2.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.4ms)
+
+
+  
+SyntaxError (/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+...er.append=  form_for (@picture, url: new_comment, html: {met...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+...comment, html: {method:'POST'}) do |f| @output_buffer.safe_a...
+...                               ^
+/Users/vkoukoul/Development/Projects/insta/app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/pictures/show.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pictures/show.html.erb:14: syntax error, unexpected ')', expecting keyword_end
+app/views/pictures/show.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:51:52 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  Rendered pictures/show.html.erb within layouts/application (100.0ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"create", :controller=>"comments", :id=>"14"}, missing required keys: [:picture_id]):
+    11: <% end %>
+    12: 
+    13: <h3>Add a comment</h3>
+    14: <%= form_for @comment do |f| %>
+    15:   <%= f.label :content %>
+    16:   <%= f.text_area :content %>
+    17:   <%= f.submit "Submit" %>
+  
+app/views/pictures/show.html.erb:14:in `_app_views_pictures_show_html_erb___1218696891614832023_70092503733100'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:52:31 -0400
+  
+ArgumentError (Invalid route name, already in use: 'comments' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:12:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:53:23 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (14.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  Rendered pictures/show.html.erb within layouts/application (3496.6ms)
+Completed 500 Internal Server Error in 3900ms (ActiveRecord: 32.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_comment_path' for #<#<Class:0x007f7f54762980>:0x007f7f5d161140>
+Did you mean?  new_tag_path):
+    20: 
+    21: 
+    22: 
+    23: <%= link_to "Back", new_comment_path %>
+  
+app/views/pictures/show.html.erb:23:in `_app_views_pictures_show_html_erb___1218696891614832023_70092450298020'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:53:49 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  Rendered pictures/show.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 631ms (Views: 583.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:54:53 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  Rendered pictures/show.html.erb within layouts/application (50.2ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"create", :controller=>"comments", :id=>"14"}, missing required keys: [:picture_id]):
+    11: <% end %>
+    12: 
+    13: <h3>Add a comment</h3>
+    14: <%= form_for @comment do |f| %>
+    15:   <%= f.label :content %>
+    16:   <%= f.text_area :content %>
+    17:   <%= f.submit "Submit" %>
+  
+app/views/pictures/show.html.erb:14:in `_app_views_pictures_show_html_erb___1218696891614832023_70092450133660'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:55:53 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  Rendered pictures/show.html.erb within layouts/application (65.4ms)
+Completed 200 OK in 732ms (Views: 681.6ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/pictures/14/comments" for 127.0.0.1 at 2017-05-10 11:56:00 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l0Im53Gw0nr9UhSZbKycw/Q/o/C8YCIAwnUAQ4Vb7Y4lK+e6ZlP70tqOpszAEC13UV6R36DgtdIwJyLrbstWUw==", "comment"=>{"content"=>"Soothing"}, "commit"=>"Submit", "picture_id"=>"14"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPicture Load (1.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "picture_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Soothing"], ["user_id", 9], ["picture_id", 14], ["created_at", "2017-05-10 15:56:01.323592"], ["updated_at", "2017-05-10 15:56:01.323592"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 30161ms (ActiveRecord: 23.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:15:in `create'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:57:27 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.9ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (847.2ms)
+Completed 500 Internal Server Error in 1241ms (ActiveRecord: 39.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x007f7f5c451388>):
+     6: <br><br><br>
+     7: 
+     8: <% @picture.comments.each do |comment| %>
+     9: <%= comment.user.name %>
+    10: <%= comment.content %>
+    11: <% end %>
+    12: 
+  
+app/views/pictures/show.html.erb:9:in `block in _app_views_pictures_show_html_erb___1218696891614832023_70092418902220'
+app/views/pictures/show.html.erb:8:in `_app_views_pictures_show_html_erb___1218696891614832023_70092418902220'
+Started PUT "/__web_console/repl_sessions/7861d7eb4c63dee2c03b77a24c83550b" for 127.0.0.1 at 2017-05-10 11:58:20 -0400
+Started PUT "/__web_console/repl_sessions/7861d7eb4c63dee2c03b77a24c83550b" for 127.0.0.1 at 2017-05-10 11:58:23 -0400
+Started PUT "/__web_console/repl_sessions/7861d7eb4c63dee2c03b77a24c83550b" for 127.0.0.1 at 2017-05-10 11:58:32 -0400
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:59:12 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.5ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 765ms (Views: 722.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 11:59:34 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (2.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (105.3ms)
+Completed 200 OK in 672ms (Views: 633.0ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/pictures/14/comments" for 127.0.0.1 at 2017-05-10 13:28:16 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PRTTp9UE9BMDsL5nVmXJqonVn+Z8bpJ9iUPLgBx/RSWPfRL6wufduyRsDDL62XgeLLStyWDuBa97Eeko9+/++A==", "comment"=>{"content"=>"I'm so sexy"}, "commit"=>"Submit", "picture_id"=>"14"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPicture Load (2.0ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "picture_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "I'm so sexy"], ["user_id", 9], ["picture_id", 14], ["created_at", "2017-05-10 17:28:16.434564"], ["updated_at", "2017-05-10 17:28:16.434564"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pictures/14
+Completed 302 Found in 194ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:28:16 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (13.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (141.2ms)
+Completed 200 OK in 788ms (Views: 743.0ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/pictures/14/" for 127.0.0.1 at 2017-05-10 13:28:53 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (142.8ms)
+Completed 200 OK in 701ms (Views: 665.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/pictures/14/" for 127.0.0.1 at 2017-05-10 13:29:17 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (2.4ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (187.1ms)
+Completed 200 OK in 996ms (Views: 949.8ms | ActiveRecord: 6.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-05-10 13:29:26 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rSkLGpMXuK37mb0va3DHloMJ/XH1PoWj1nMOSV66pjQfQMpHhPSRBdxFD3rHzHYiJmjPXum+EnEkISzhtSod6Q=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-10 13:29:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 628ms (Views: 612.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-10 13:29:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NNlbKKhwq9F69Z680v9s5yiGgYltHU72g94myIKi9KexrAMgluSuH3jj1NDynoLQIFwDzC5006MoCHCemQkB3A==", "user"=>{"name"=>"Donald Trump", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Donald Trump"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 116ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2017-05-10 13:29:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (2.1ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered users/show.html.erb within layouts/application (91.2ms)
+Completed 200 OK in 685ms (Views: 644.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2017-05-10 13:29:51 -0400
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (2.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.erb within layouts/application (88.2ms)
+Completed 200 OK in 638ms (Views: 621.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:30:03 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 712ms (Views: 668.5ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/pictures/14/comments" for 127.0.0.1 at 2017-05-10 13:30:14 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f0Lcyzfe/ruVvrGt9YUvidXYhLoW1mMiVNAd5Fnb3736N4TDCUr7dZeo+8HV5MG+3QIG/1W//nf/BkuyQnAqxg==", "comment"=>{"content"=>"Fake news"}, "commit"=>"Submit", "picture_id"=>"14"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPicture Load (1.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "picture_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Fake news"], ["user_id", 8], ["picture_id", 14], ["created_at", "2017-05-10 17:30:14.289111"], ["updated_at", "2017-05-10 17:30:14.289111"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pictures/14
+Completed 302 Found in 158ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:30:14 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (168.7ms)
+Completed 200 OK in 792ms (Views: 758.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:31:48 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (2.5ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (198.4ms)
+Completed 200 OK in 810ms (Views: 763.0ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2017-05-10 13:31:53 -0400
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"jcsdTIs7klSKoYh89hCDGV7nB1TIJvfynZ3WgqyoMzEIvkVEta+Xmoi3whDWcW0uVj2FEYtPaqc2S4DUtwPGSg=="}
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: picture):
+  
+app/controllers/pictures_controller.rb:47:in `picture_params'
+app/controllers/pictures_controller.rb:13:in `create'
+Started POST "/pictures" for 127.0.0.1 at 2017-05-10 13:32:07 -0400
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"jcsdTIs7klSKoYh89hCDGV7nB1TIJvfynZ3WgqyoMzEIvkVEta+Xmoi3whDWcW0uVj2FEYtPaqc2S4DUtwPGSg=="}
+Completed 400 Bad Request in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: picture):
+  
+app/controllers/pictures_controller.rb:47:in `picture_params'
+app/controllers/pictures_controller.rb:13:in `create'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:33:30 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (1.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (193.0ms)
+Completed 200 OK in 782ms (Views: 753.4ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/users/14" for 127.0.0.1 at 2017-05-10 13:33:34 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/14"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/14" for 127.0.0.1 at 2017-05-10 13:34:44 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 14]]
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 298ms (Views: 244.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:34:59 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (36.7ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    20:   <%= f.submit "Submit" %>
+    21: <% end %>
+    22: 
+    23: <%= button_to "Back", user_path(@user) %>
+  
+app/views/pictures/show.html.erb:23:in `_app_views_pictures_show_html_erb__3099259831015973489_70282028070820'
+Started GET "/login" for 127.0.0.1 at 2017-05-10 13:35:13 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-05-10 13:35:17 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2nruzyADpERGevFBDCWB3zN4Cg5LetYCsqoQE6L/6LNfD7bHHpehikRsuy0sRG/oO6KISwgTS1cZfEZFuVQdyA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-10 13:35:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-05-10 13:35:23 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QLktvRzXDjBlhvz4ou+mFCIarzUcwSquiA9DA6xv+6/J4ad9jMN8zMfq5TFkFk6GHv6ef/NV5X11pl6erU4ynQ==", "user"=>{"name"=>"Donald Trump", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Donald Trump"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 67ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/8" for 127.0.0.1 at 2017-05-10 13:35:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:35:32 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    20:   <%= f.submit "Submit" %>
+    21: <% end %>
+    22: 
+    23: <%= button_to "Back", user_path(@user) %>
+  
+app/views/pictures/show.html.erb:23:in `_app_views_pictures_show_html_erb__3099259831015973489_70282052620360'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:36:05 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (228.5ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fd79ea26570>:0x007fd7a1ae3a50>
+Did you mean?  @comment):
+    20:   <%= f.submit "Submit" %>
+    21: <% end %>
+    22: 
+    23: <%= button_to "Back", user_path(comment.user_id) %>
+  
+app/views/pictures/show.html.erb:23:in `_app_views_pictures_show_html_erb__3099259831015973489_70282030311040'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:36:14 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    20:   <%= f.submit "Submit" %>
+    21: <% end %>
+    22: 
+    23: <%= button_to "Back", user_path(@comment.user_id) %>
+  
+app/views/pictures/show.html.erb:23:in `_app_views_pictures_show_html_erb__3099259831015973489_70282022104400'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:37:12 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (69.1ms)
+Completed 200 OK in 439ms (Views: 360.9ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/users/14" for 127.0.0.1 at 2017-05-10 13:37:16 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/14"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/14" for 127.0.0.1 at 2017-05-10 13:38:01 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/14"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pciture/14" for 127.0.0.1 at 2017-05-10 13:38:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pciture/14"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pcitures/14" for 127.0.0.1 at 2017-05-10 13:38:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/pcitures/14"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pictures/14" for 127.0.0.1 at 2017-05-10 13:39:01 -0400
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = ?[0m  [["picture_id", 14]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered pictures/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2017-05-10 13:39:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 14]]
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 65ms (Views: 56.4ms | ActiveRecord: 0.5ms)
+
+
