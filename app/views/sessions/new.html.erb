@@ -1,4 +1,4 @@
-<h1>Log In</h1>
+<h1>Welcome to Instagraph. Please log in or sign up.</h1>
 <%= flash[:notice] %>
 
 <%= form_tag login_path do %>
@@ -7,5 +7,5 @@
   <%= label_tag 'Password'%>
   <%= password_field_tag 'user[password]' %><br/>
   <%= submit_tag "Log In" %>
-<% end %>
-<%= link_to "Sign Up", new_user_path %>
+<% end %><br/>
+<%= link_to "New User", new_user_path %><br/>
