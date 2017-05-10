@@ -4492,3 +4492,218 @@ Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms)
 ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"pictures", :id=>nil}, missing required keys: [:id]):
   
 app/controllers/pictures_controller.rb:20:in `create'
+Started GET "/" for 127.0.0.1 at 2017-05-10 09:50:53 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 366ms (Views: 355.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:51:01 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 72ms (Views: 46.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:51:45 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAQD5z2GDyzlKH5Xn9Kp7/pYzQw9f64w5OeWn7DNA0L6/mrtSILDvfOt5AafCgn49i3ssgQAwjziG9sbTJVJSg==", "user"=>{"username"=>"poop", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poop"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `name' for #<User:0x007f86599f8940>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:52:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FFKBl2tIN6owsOO6uonoCpqVhXC+OJWV/lATcVl9HJceJ4OAogGBNCbg6x1Kwp3er7H24+TpjyDeJwRTsUWIw==", "user"=>{"username"=>"poop", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poop"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 27ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:52:34 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:52:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UVCrLEnuHr44yYTtQb21WHKpjvSEOWdXEvxfB+QLX5bleX8kFss4ZECQxM/efJiPIn0fOslSIz3GfYNbb6u9xw==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:52:44 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:53:22 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2MJuUBMjSUyclAbPvfhrfctfLzmtZe9BNWdDwVoOkqhs67pYTAZvluTNRu0iOUaqm4u+9+AOqyvh5p+d0a5w+Q==", "user"=>{"username"=>"poop", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poop@poop.com"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 67ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:53:22 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:54:01 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 40ms (Views: 25.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:54:13 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NufAAMBCPzxu8BifbIrwyoc7OajJSUci1c/q1s3bD5CCzhQIn2cZ5hapWL3zS90d1++oZoQiA0gBTjaKRnvtwQ==", "user"=>{"username"=>"poop", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poop@poop.com"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "poop@poop.com"], ["username", "poop"], ["password_digest", "$2a$10$1mLBpHXDYVB070pC5nRbyuUku2L5EFjR2bITXBhOdCY10CYgisnwC"], ["created_at", "2017-05-10 13:54:13.551483"], ["updated_at", "2017-05-10 13:54:13.551483"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 73ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:54:13 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:56:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kgl7IKVvMHDVT8yg3dTABkPwWrHknsomHy1gU5rx5zKeIK8o+koWqq0WjIJCFe3REyTLf6n1jkzLrLwPEVEFYw==", "user"=>{"username"=>"poop", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poop@poop.com"}, "commit"=>"Create User"}
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:59:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/vkoukoul/Development/Projects/insta/app/controllers/users_controller.rb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:43: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 09:59:21 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 244ms (Views: 220.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 09:59:32 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"48Xy5WOHz9cuQp9/4TFup8Qup3cjS9nw9HnEc1OgtWRX7CbtPKLpDVYb311+8ENwlPo2uW4gnZog+Bgv2ABXNQ==", "user"=>{"username"=>"poo", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poo@poo.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "poo@poo.com"], ["username", "poo"], ["password_digest", "$2a$10$ynWKrQOaqG7TQkcr3fxQb.RZp6BISFX.kNz3hwE5o4GH16bdLFgDO"], ["created_at", "2017-05-10 13:59:32.379804"], ["updated_at", "2017-05-10 13:59:32.379804"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 13106ms (ActiveRecord: 3.9ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 10:00:02 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 689ms (Views: 520.6ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 10:00:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ItcHwXlcc3DBlgDZp2sPXuPWof95Ip/7d28O9q6f7REoogXWsBXF7tfGCH5XIHqK1vLSbCPzhU5XGBnURqd5Q==", "user"=>{"username"=>"poo", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"poo@poo.com"}, "commit"=>"Create User"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "poo@poo.com"], ["username", "poo"], ["password_digest", "$2a$10$V0oIUVE.LgU4KQo9FjQfleBdkGyXbJ3DpZZu.eIeot4u9ktdyp8K6"], ["created_at", "2017-05-10 14:00:12.206276"], ["updated_at", "2017-05-10 14:00:12.206276"]]
+  [1m[35m (65.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/25
+Completed 302 Found in 222ms (ActiveRecord: 68.2ms)
+
+
+Started GET "/users/25" for 127.0.0.1 at 2017-05-10 10:00:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPicture Load (1.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 25]]
+  Rendered users/show.html.erb within layouts/application (78.9ms)
+Completed 200 OK in 736ms (Views: 541.8ms | ActiveRecord: 6.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-05-10 10:00:16 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ULoijvUacBunkcMUuclf+4we17POfoQ474GJqzDxR83kk/aGqj9Wwd/IgzYmCHIs3MpGfYMVwFI7AFX3u1GlnA=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-05-10 10:00:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 507ms (Views: 491.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 10:00:20 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 564ms (Views: 542.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 10:00:27 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pgo4VwLr0bHtffaHF6cncD4KmjSczPPJ3+7Z3glpTk+FE6/zp8BSxzyy4rNRuj0Kr1dxFgVl3IiWIfybtDc16w==", "user"=>{"username"=>"poo", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"jsadasd"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 10:00:27 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 556ms (Views: 542.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-10 10:00:42 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVHE8W4dz3H4ttuDuzZQQvJoIkbEndZjpnZ/Huk2vfADOAWsef7m2d9qadYXiuH2VwkQadgdQbFUJF22AqYGLQ==", "user"=>{"username"=>"asjdnasd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 34ms
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-10 10:00:43 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 761ms (Views: 552.5ms | ActiveRecord: 10.4ms)
+
+

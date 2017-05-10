@@ -7,13 +7,17 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    if (user_params[:password] == user_params[:password_confirmation])
     @user = User.create(user_params)
     # byebug
     session[:user_id] = @user.id
-    if @user.password == @user.password_confirmation && @user.save
+    if @user.valid?
       # @user.save
       redirect_to user_path(@user)
+    else
+      flash[:notice] = "Invalid credentials, please try again"
+      redirect_to new_user_path
+    end
     else
       flash[:notice] = "Invalid credentials, please try again"
       redirect_to new_user_path
@@ -33,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email)
+    params.require(:user).permit(:username, :password, :password_confirmation, :email)
 
   end
 
