@@ -1,14 +1,22 @@
 <h2><%= @picture.title %></h2>
-<%= button_to "Edit title", edit_picture_path %>
+<% @picture.tags.each do |tag| %>
+  <h4><%= tag.name %></h4>
+<% end %>
+
+
+<%= link_to "Edit title", edit_picture_path %>
+
+<h3>Add a tag</h3>
+<%= form_for @tag, url:tags_path(@picture) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area :name %>
+  <%= f.submit "Submit" %>
+<% end %>
 
 <br><br><br>
 <%= image_tag @picture.image_url %>
 <br><br><br>
 
-<<<<<<< HEAD
-<%= button_to "Add Comment", new_comment_path %>
-<%= button_to "Back", new_comment_path %>
-=======
 <h4> Comments </h4>
 
 <% @picture.comments.each do |comment| %>
@@ -25,4 +33,3 @@
 <% end %>
 
 <%= link_to "Back", user_path %>
->>>>>>> b8639f62d0f630218d6f86a1a3886acb94ffc43f

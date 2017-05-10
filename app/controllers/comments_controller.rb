@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :require_login
 
   # @comments = Comment.all
 
@@ -20,4 +21,7 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:content)
   end
 
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
+  end
 end

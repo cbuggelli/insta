@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :require_login
+  skip_before_action :require_login, only: [:index,:show]
 
  def index
    @pictures = Picture.all
@@ -21,9 +23,12 @@ class PicturesController < ApplicationController
  end
 
  def show
-   # byebug
+
    @picture = Picture.find(params[:id])
    @comment = Comment.new
+   @tag = Tag.new
+   @picture_tag = PictureTag.create(tag_id: @tag.id, picture_id: @picture.id)
+  #  byebug
  end
 
  def edit
@@ -47,5 +52,9 @@ class PicturesController < ApplicationController
    params.require(:picture).permit(:image_url, :title)
 
  end
+
+ def require_login
+    return head(:forbidden) unless session.include? :user_id
+  end
 
 end
