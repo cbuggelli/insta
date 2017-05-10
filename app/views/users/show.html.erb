@@ -4,7 +4,7 @@
 <h1><%= @user.username %></h1> <br>
 <p><%= @user.email %> </p> <br>
 
-<h1><%= link_to "Add a Picture", new_picture_path %></h1>
+<h1><%= button_to "Add a Picture", new_picture_path %></h1>
 
 <% @pictures.each do |picture|%>
 <h3><%= picture.title %></h3>

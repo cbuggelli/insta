@@ -11,10 +11,12 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     # byebug
     session[:user_id] = @user.id
-    if @user.save
+    if @user.password == @user.password_confirmation && @user.save
+      # @user.save
       redirect_to user_path(@user)
     else
-      render :new
+      flash[:notice] = "Invalid credentials, please try again"
+      redirect_to new_user_path
     end
   end
 

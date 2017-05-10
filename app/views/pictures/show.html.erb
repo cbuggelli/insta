@@ -1,5 +1,9 @@
 <h2><%= @picture.title %></h2>
+<%= button_to "Edit title", edit_picture_path %>
 
+<br><br><br>
 <%= image_tag @picture.image_url %>
 <br><br><br>
-<%= link_to "Back", new_picture_path %>
+
+<%= button_to "Add Comment", new_comment_path %>
+<%= button_to "Back", new_comment_path %>
