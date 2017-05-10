@@ -1,7 +1,21 @@
 <% @pictures.each do |picture|%>
-<%= image_tag picture.image_url %>
+<div class="thumbnail">
+  <div class="row">
+        <div class="col-lg-12" style="background-color:black;">
+
+<h5><%= link_to "#{picture.title}", picture_path(picture) %></h5>
+
+
+
+<%= image_tag picture.image_url, class:"rounded float-left"%>
+</div>
+</div>
+</div>
+</div>
+
+
+
 <br>
-<h3><%= link_to "#{picture.title}", picture_path(picture) %></h3>
 
 
 <% end %>
