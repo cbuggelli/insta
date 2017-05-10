@@ -23,6 +23,7 @@ class PicturesController < ApplicationController
  def show
    # byebug
    @picture = Picture.find(params[:id])
+   @comment = Comment.new
  end
 
  def edit
@@ -34,6 +35,7 @@ class PicturesController < ApplicationController
    @picture.update(picture_params)
    redirect_to picture_path(@picture.id)
  end
+
 
  def destroy
    @picture.delete
