@@ -20,7 +20,8 @@
   </div>
   </div>
 </div>
+
 <% else %>
-  <h2>You are logged in.</h2>
-<%= flash[:notice] %>
+  <h2>You are already logged in. Click <%= link_to "here", logout_path, method: "DELETE" %> to log out.</h2>
 <% end %>
+<%= flash[:notice] %>
