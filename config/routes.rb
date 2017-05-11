@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/pictures/:picture_id/tags', to: 'tags#create', as: 'tags'
   post '/pictures/new', to: 'pictures#new', as: 'new_pic'
 
+  get '/tags/:id', to: 'tags#show', as: 'tag'
+
   # post '/pictures/:picture_id/tags', to: 'tags#create', as: 'tags'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
