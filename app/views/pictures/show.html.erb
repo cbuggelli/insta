@@ -1,50 +1,60 @@
+<div class="fluid-container" align="center">
+  <div class="fluid-container">
+    <div class="jumbotron text-center">
+      <h1 align="center">
+        <%= current_user.username %>
+      </h1>
+    </div>
+
 <h2>
   <%= @picture.title %></h2>
 <% @picture.tags.each do |tag| %>
-<h4><%= link_to tag.name, tag_path(tag) %></h4>
+<h4><%= link_to tag.name, tag_path(tag) %><br></h4>
 <% end %>
 <%= link_to "Edit title", edit_picture_path %>
+<br>
 
-<br><br><br>
 <%= image_tag @picture.image_url %>
-<br><br><br>
 
-<h3>
-  Comments
-</h3>
+<div class="fluid-container">
+  <div class="row">
+      <h3>Add a comment</h3>
+      <%= form_for @comment, url:comments_path(@picture) do |f| %>
 
-<% @picture.comments.each do |comment| %>
-<br>
-<%= comment.created_at.strftime("%l:%M %p %b %e, %Y") %>
-<h5>
-  <%= comment.user.username + ": " %>
-</h5>
-<%= comment.content %>
-<br>
-<% end %>
+      <%= f.text_area :content %>
+      <%= f.submit "Submit", :class => 'btn btn-success' %>
+      <% end %>
+    </div>
+      <h3>Add a tag</h3>
+      <%= form_for @tag, url:tags_path(@picture) do |f| %>
 
-<br/>
+      <%= f.text_area :name %>
+      <%= f.submit "Submit", :class => 'btn btn-success btn-large' %>
+      <% end %>
 
-<h3>Add a comment</h3>
-<%= form_for @comment, url:comments_path(@picture) do |f| %>
-<%= f.label :content %>
-<%= f.text_area :content %>
-<%= f.submit "Submit", :class => 'btn btn-success' %>
-<% end %>
-<br>
+  </div>
 
-<h3>Add a tag</h3>
-<%= form_for @tag, url:tags_path(@picture) do |f| %>
-<%= f.label :name %>
-<%= f.text_area :name %>
-<%= f.submit "Submit" %>
-<% end %>
-
-<h3>or add existing tag</h3>
+<h3>Add Existing Tag</h3>
 <%= form_for @picture, url:picture_path(@picture) do |f| %>
 <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
 <%= f.submit "Submit" %>
 <% end %>
+
+<h2>
+  <strong>
+    Comments
+  </strong>
+</h2>
+
+<% @picture.comments.each do |comment| %>
+<%= comment.created_at.strftime("%l:%M %p %b %e") + " : " %>
+<h3>
+  <strong><%= comment.user.username + "  :  " %></strong><%= comment.content %><br></h3>
+
+
+<% end %>
+</div>
+</div>
 <%= link_to "Back", pictures_path %>
 <br>
 <%= link_to "My profile", user_path(current_user) %>
