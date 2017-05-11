@@ -12,12 +12,14 @@
 <%= image_tag @picture.image_url %>
 <br><br><br>
 
-<h4> Comments </h4>
+<h3> Comments </h3>
 
 <% @picture.comments.each do |comment| %>
 <br>
-<%= comment.user.username + ": " %>
+<%= comment.created_at %>
+<h5> <%= comment.user.username + ": " %> </h5>
 <%= comment.content %>
+<br>
 <% end %>
 
 <h3>Add a comment</h3>
@@ -26,6 +28,7 @@
   <%= f.text_area :content %>
   <%= f.submit "Submit" %>
 <% end %>
+<br>
 
 <h3>Add a tag</h3>
 <%= form_for @tag, url:tags_path(@picture) do |f| %>
@@ -34,4 +37,4 @@
   <%= f.submit "Submit" %>
 <% end %>
 
-<%= link_to "Back", user_path %>
+<%= link_to "Back", user_path(current_user) %>

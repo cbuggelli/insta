@@ -11,14 +11,19 @@ class PicturesController < ApplicationController
  end
 
  def create
-# byebug
+   @tags = params[:picture][:tags].split(',')
    @picture = Picture.new(picture_params)
    @picture.user_id = current_user.id
+   @tags.each do |tags|
+     tag = Tag.find_or_create_by(name: tags)
+     @picture.tags << tag
+   end
    @picture.save
 
   #  @picture.id = picture_params[:id]
 
   #  redirect_to new_picture_path(@picture) unless @picture.save
+
    redirect_to picture_path(@picture)
  end
 
@@ -33,6 +38,9 @@ class PicturesController < ApplicationController
 
  def edit
    @picture = Picture.find(params[:id])
+   if @picture.user.id != current_user.id
+     redirect_to user_path(current_user)
+   end
  end
 
  def update
@@ -48,7 +56,7 @@ class PicturesController < ApplicationController
 
  private
 
- def picture_params
+ def picture_params (*args)
    params.require(:picture).permit(:image_url, :title)
 
  end
