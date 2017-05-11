@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
   skip_before_action :require_login, only: [:index,:show]
 
  def index
-   @pictures = Picture.all
+   @pictures = Picture.hot_pics
  end
 
  def new

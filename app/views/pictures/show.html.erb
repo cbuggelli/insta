@@ -1,22 +1,8 @@
-<h2><%= @picture.title %></h2>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<%= button_to "Edit title", edit_picture_path %>
-=======
-=======
->>>>>>> 85de6042f08036d4e1b71d6bb0af23ed5183c288
+<h2> <%= @picture.title %></h2>
 <% @picture.tags.each do |tag| %>
   <h4><%= tag.name %></h4>
 <% end %>
-
-
 <%= link_to "Edit title", edit_picture_path %>
-<<<<<<< HEAD
->>>>>>> 9e94513db21d628776846f80e00bf3ee676951d9
-=======
->>>>>>> 85de6042f08036d4e1b71d6bb0af23ed5183c288
-
-
 
 <br><br><br>
 <%= image_tag @picture.image_url %>
@@ -47,4 +33,4 @@
   <%= f.submit "Submit" %>
 <% end %>
 
-<%= link_to "Back", user_path(current_user) %>
+<%= link_to "Back", pictures_path %>
