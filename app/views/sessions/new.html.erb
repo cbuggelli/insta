@@ -1,5 +1,7 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Insta!</h1>
+    <% if !logged_in? %>
+
   <p>
     <a href="/users/new" class="btn btn-warning btn-lg">Sign Up</a>
     <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
@@ -13,10 +15,20 @@
 <%= submit_tag "Log In", :class => 'btn btn-primary' %>
 <% end %>
 </h5>
-  <div class="fluid-container">
-    <div class="row">
+
+
+
+
+
 
   </div>
   </div>
 </div>
+
+<% else %>
+  <h2>You are logged in as <%= current_user.username %>. Click <%= link_to "here", logout_path, method: "DELETE" %> to log out.</h2>
+  <h2><%= link_to "Back to all pictures", pictures_path %></h2>
+  <h2><%= link_to "Back to your profile", user_path(current_user)%></h2>
+
+<% end %>
 <%= flash[:notice] %>
