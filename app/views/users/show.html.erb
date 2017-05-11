@@ -9,7 +9,13 @@ On <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>
 <br/>
 <%end %>
 
-<br/>
+<h2> My Tags: </h2>
+<% tagz = [] %> <% @user.pictures.each do |pic| %> <% pic.tags.each do |tag| %>
+<h3> <% tagz << tag.name %> </h3> <br>
+<%end %>
+<% end %>
+<h3> <%= tagz.sort.join('   ')%> </h3>
+>>>>>>> Mattsworld2
 <h1><%= button_to "Add a Picture", new_picture_path %></h1>
 <br/>
 
