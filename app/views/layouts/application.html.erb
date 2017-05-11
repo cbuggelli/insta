@@ -11,11 +11,13 @@
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>
-    <%= yield %>
+    <div class="fluid-container">
 
+      <%= yield %>
+    </div>
     <% if logged_in? %>
     <div>
-      <%= button_to "Log Out", logout_path, method: "DELETE" %>
+      <%= link_to "Log Out", logout_path, method: "DELETE" %>
       </div>
     <% end %>
   </body>

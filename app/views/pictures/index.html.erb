@@ -1,6 +1,11 @@
-<% @pictures.each do |picture|%>
-<%= image_tag picture.image_url %>
-<br>
-<%= picture.title %>
+<div class="row">
+  <% @pictures.each do |picture|%>
 
-<% end %>
+  <div class="col-md-4">
+
+  <h5 align="center"><%= link_to "#{picture.title}", picture_path(picture) %></h5>
+  <%= image_tag picture.image_url, class:"img-fluid"%>
+</div>
+
+  <% end %>
+</div>
