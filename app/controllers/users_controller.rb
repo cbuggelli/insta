@@ -29,6 +29,17 @@ class UsersController < ApplicationController
     @pictures = @user.pictures
   end
 
+  def edit
+    @user = User.new
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if params[:user][:password] == params[:user][:password_confirmation]
+      @user = User.update(user_params)
+    end
+  end
+
   def destroy
     @user.delete
   end
@@ -36,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username,:password,:email)
+    params.require(:user).permit(:username,:password,:email,:profile_pic)
   end
 
 end
