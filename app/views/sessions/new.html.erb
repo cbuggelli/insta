@@ -1,9 +1,10 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Insta!</h1>
-  <p>
-    <a href="/users/new" class="btn btn-warning btn-lg">Sign Up</a>
-    <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
-  </p>
+  <% if !logged_in? %>
+    <p>
+      <a href="/users/new" class="btn btn-warning btn-lg">Sign Up</a>
+      <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
+    </p>
 
   <div class="fluid-container">
     <div class="row">
@@ -19,4 +20,7 @@
   </div>
   </div>
 </div>
+<% else %>
+  <h2>You are logged in.</h2>
 <%= flash[:notice] %>
+<% end %>
