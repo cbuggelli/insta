@@ -18,13 +18,13 @@ class PicturesController < ApplicationController
      tag = Tag.find_or_create_by(name: tags)
      @picture.tags << tag
    end
-   @picture.save
-
-  #  @picture.id = picture_params[:id]
-
-  #  redirect_to new_picture_path(@picture) unless @picture.save
-
-   redirect_to picture_path(@picture)
+   if @picture.valid?
+     @picture.save
+     redirect_to picture_path(@picture)
+   else
+     flash[:notice] = "URL must be for GIF, JPG or PNG image."
+     redirect_to new_picture_path
+   end
  end
 
  def show
