@@ -11394,3 +11394,219 @@ Completed 200 OK in 1430ms (Views: 1407.9ms | ActiveRecord: 0.0ms)
 
 
 >>>>>>> master
+Started GET "/login" for 127.0.0.1 at 2017-05-11 10:52:48 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Started GET "/login" for 127.0.0.1 at 2017-05-11 10:52:48 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 253ms (Views: 249.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 575ms (Views: 558.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 10:52:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 155ms (Views: 123.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:53:02 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Ot/no4GUy2gf4fXvaev94E8y6Gt/Zfel5OBEpcxg9Dj9XNePN6dJUc7d2ys6tcUjqFnuEY1t4RZEtevGt2wiw==", "user"=>{"username"=>"isaac", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dklafshjlsdfhj"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+Unpermitted parameter: :password_confirmation
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:54:31 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Ot/no4GUy2gf4fXvaev94E8y6Gt/Zfel5OBEpcxg9Dj9XNePN6dJUc7d2ys6tcUjqFnuEY1t4RZEtevGt2wiw==", "user"=>{"username"=>"isaac", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dklafshjlsdfhj"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+Unpermitted parameter: :password_confirmation
+Completed 500 Internal Server Error in 4ms
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:54:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l4riErfVLWY7yGpXJq+/g1nhWS86ogVQ5TikOn7ZJaiSiF+wJyq2E9CkwQvaRwB795ADyoCSGMZ0UG5xxrgw8g==", "user"=>{"username"=>"isaac", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dklafshjlsdfhj"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+Unpermitted parameter: :password_confirmation
+Completed 500 Internal Server Error in 3ms
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:56:42 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l4riErfVLWY7yGpXJq+/g1nhWS86ogVQ5TikOn7ZJaiSiF+wJyq2E9CkwQvaRwB795ADyoCSGMZ0UG5xxrgw8g==", "user"=>{"username"=>"isaac", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dklafshjlsdfhj"}, "commit"=>"Create User"}
+Unpermitted parameter: :password_confirmation
+Unpermitted parameter: :password_confirmation
+Completed 500 Internal Server Error in 2ms
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:57:20 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l4riErfVLWY7yGpXJq+/g1nhWS86ogVQ5TikOn7ZJaiSiF+wJyq2E9CkwQvaRwB795ADyoCSGMZ0UG5xxrgw8g==", "user"=>{"username"=>"isaac", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"dklafshjlsdfhj"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 42451ms (ActiveRecord: 1.7ms)
+
+
+  
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 10:58:03 -0400
+SystemExit (exit):
+Processing by UsersController#new as HTML
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (75.5ms)
+Completed   in 1859ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 10:58:13 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 510ms (Views: 473.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:58:26 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlfThRrMeaQF4hluT5wsGTx9l+E/3QgO4aiMgLgO6qArVW4nijPi0e6OsjKzdJPhkgzNBIXtFZhwwEbLAG//+g==", "user"=>{"username"=>"andrea", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 108ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 10:58:26 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 94ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:58:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hI3mcWDZwltOLVyhJb9/LQ+uJ9BdDfHss7tpJFt//k+Bj1vT8CZZLqVB9/3ZV8DVod99Nec97Hoi06Nv4x7rFQ==", "user"=>{"username"=>"andrea", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"a"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:59:25 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hI3mcWDZwltOLVyhJb9/LQ+uJ9BdDfHss7tpJFt//k+Bj1vT8CZZLqVB9/3ZV8DVod99Nec97Hoi06Nv4x7rFQ==", "user"=>{"username"=>"andrea", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"a"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 10:59:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 77ms (Views: 54.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 10:59:48 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pYZw1PyY05PFzhhzqsN+adMT0l9hnKQQ0sIWVy7GjomghM12bGdI5i6isy9WK8GRfWKIutusuYZDqtwclqeb0w==", "user"=>{"username"=>"w", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"w"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-05-11 11:00:06 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pYZw1PyY05PFzhhzqsN+adMT0l9hnKQQ0sIWVy7GjomghM12bGdI5i6isy9WK8GRfWKIutusuYZDqtwclqeb0w==", "user"=>{"username"=>"w", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"w"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `valid?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 11:01:27 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 487ms (Views: 453.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 11:01:36 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U6B6u7O+oVaHpA5K+KGusebuTZSIN2dULx8HJcr4YPtWoscZI0E6I2zIpRYESRFJSJ8XcTIHesK+d81ucpl1oQ==", "user"=>{"username"=>"w", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"w"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 101ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 11:01:36 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 95ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 11:01:52 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IOdMg3soaUXvqfdDtiv6riDHBP3HU51d9ari4V9bKF4l5fEh69fyMATFXB9Kw0VWjrZeGH1jgMtkwiiq5zo9BA==", "user"=>{"username"=>"christopher", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"a"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 102ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-05-11 11:01:52 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-11 11:01:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5DHllF0oSec2HLE7DhKTDQKzVQCD8JX7EkwR22bb/czhM1g2zdfSkt1wGmfy+iz1rMIP5TnAiG2DJNuQ3rrolg==", "user"=>{"username"=>"christopher", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"a"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "a"], ["username", "christopher"], ["password_digest", "$2a$10$d.rsYkapwvdDJm900AJr..Kte9qn1xyUSct0n/.z3yPqQR1WGh3Ve"], ["created_at", "2017-05-11 15:01:59.745000"], ["updated_at", "2017-05-11 15:01:59.745000"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/26
+Completed 302 Found in 118ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/users/26" for 127.0.0.1 at 2017-05-11 11:01:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 26]]
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?[0m  [["user_id", 26]]
+  Rendered users/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 179ms (Views: 116.1ms | ActiveRecord: 2.4ms)
+
+
