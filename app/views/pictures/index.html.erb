@@ -1,11 +1,19 @@
+MOVE THESE SOMEWHERE!
+<h3> Popular Tags: </h3>
+<% Tag.most_popular.each do |tag| %>
+<li> <%= tag.name %> </li>
+<% end %>
+
 <div class="row">
   <% @pictures.each do |picture|%>
 
   <div class="col-sm-3">
 
   <h5 align="center"><%= link_to "#{picture.title}", picture_path(picture) %></h5>
-  <%= image_tag picture.image_url, class:"img-fluid img-round"%>
+  <%=link_to  picture_path(picture)  do %>
+  <%= image_tag (picture.image_url), class:"img-fluid img-round" %>
+  <% end %>
+  posted by: <%= picture.user.username %> at: <%=picture.created_at %>
 </div>
-
   <% end %>
 </div>
