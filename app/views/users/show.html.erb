@@ -1,15 +1,33 @@
 <%= flash[:notice] %>
-<h1><%= @user.username %></h1>
-<p><%= @user.email %> </p>
-<h2> Recent Comments: </h2> <br>
-<% current_user.comments.reverse.each do |comment|%>
-At <%= comment.created_at %>: <%= comment.content %> on <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>
-<br>
-<%end %>
-<h1><%= button_to "Add a Picture", new_picture_path %></h1>
-<h2> My Pictures </h2>
-<% @pictures.each do |picture|%>
-<h3><%= link_to "#{picture.title}", picture_path(picture) %></h3>
-<%= image_tag picture.image_url %>
-<% end %>
-<h3><%= link_to "All Pictures", pictures_path %> </h3>
+<div class="row">
+  <div class="col-m-3">
+    <h2 allign="center"><%= @user.username %></h2>
+  </div>
+  <p><%= @user.email %>
+  </p>
+
+  <div class=container-fluid>
+    <h2>
+      Recent Comments:
+    </h2><br/>
+    <% current_user.comments.reverse.each do |comment|%>
+    On
+    <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>,
+    <%= comment.created_at.strftime("%b %e, %Y") %>:<br/>
+    <%= comment.content %><br/>
+    <br/>
+    <%end %>
+  </div>
+
+  <div class=container-fluid>
+    <h1><%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-warning'} %></h1>
+    <h2>
+      My Pictures
+    </h2>
+    <% @pictures.each do |picture|%>
+    <h3><%= link_to "#{picture.title}", picture_path(picture) %></h3>
+    <%= image_tag picture.image_url %>
+    <% end %>
+    <h3><%= link_to "All Pictures", pictures_path %>
+    </h3>
+  </div>

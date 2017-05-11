@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
   skip_before_action :require_login, only: [:index,:show]
 
  def index
-   @pictures = Picture.all
+   @pictures = Picture.hot_pics
  end
 
  def new
@@ -57,7 +57,7 @@ class PicturesController < ApplicationController
  private
 
  def picture_params (*args)
-   params.require(:picture).permit(:image_url, :title)
+   params.require(:picture).permit(:image_url, :title, :tag_ids => [])
 
  end
 

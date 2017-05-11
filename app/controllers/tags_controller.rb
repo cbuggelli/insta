@@ -7,8 +7,12 @@ class TagsController < ApplicationController
     @tag = Tag.create(name: tag_params[:name])
     @picture = Picture.find(params[:picture_id])
     @picture.tags << @tag
-    # byebug
     redirect_to picture_path(@picture)
+  end
+
+  def show
+    @tag = Tag.find(params[:id])
+
   end
 
   private

@@ -1,50 +1,50 @@
-<h2><%= @picture.title %></h2>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<%= button_to "Edit title", edit_picture_path %>
-=======
-=======
->>>>>>> 85de6042f08036d4e1b71d6bb0af23ed5183c288
+<h2>
+  <%= @picture.title %></h2>
 <% @picture.tags.each do |tag| %>
-  <h4><%= tag.name %></h4>
+<h4><%= link_to tag.name, tag_path(tag) %></h4>
 <% end %>
-
-
 <%= link_to "Edit title", edit_picture_path %>
-<<<<<<< HEAD
->>>>>>> 9e94513db21d628776846f80e00bf3ee676951d9
-=======
->>>>>>> 85de6042f08036d4e1b71d6bb0af23ed5183c288
-
-
 
 <br><br><br>
 <%= image_tag @picture.image_url %>
 <br><br><br>
 
-<h3> Comments </h3>
+<h3>
+  Comments
+</h3>
 
 <% @picture.comments.each do |comment| %>
 <br>
-<%= comment.created_at %>
-<h5> <%= comment.user.username + ": " %> </h5>
+<%= comment.created_at.strftime("%l:%M %p %b %e, %Y") %>
+<h5>
+  <%= comment.user.username + ": " %>
+</h5>
 <%= comment.content %>
 <br>
 <% end %>
 
+<br/>
+
 <h3>Add a comment</h3>
 <%= form_for @comment, url:comments_path(@picture) do |f| %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.submit "Submit", :class => 'btn btn-success' %>
+<%= f.label :content %>
+<%= f.text_area :content %>
+<%= f.submit "Submit", :class => 'btn btn-success' %>
 <% end %>
 <br>
 
 <h3>Add a tag</h3>
 <%= form_for @tag, url:tags_path(@picture) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_area :name %>
-  <%= f.submit "Submit" %>
+<%= f.label :name %>
+<%= f.text_area :name %>
+<%= f.submit "Submit" %>
 <% end %>
 
-<%= link_to "Back", user_path(current_user) %>
+<h3>or add existing tag</h3>
+<%= form_for @picture, url:picture_path(@picture) do |f| %>
+<%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
+<%= f.submit "Submit" %>
+<% end %>
+<%= link_to "Back", pictures_path %>
+<br>
+<%= link_to "My profile", user_path(current_user) %>

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :password, presence: true
   validates :email, presence: true
+  validates_format_of :email, :with => /@/
 
   def received_comments
     user_pictures = @user.picture.map do |picture|
