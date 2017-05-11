@@ -4,7 +4,7 @@
 <h2> Recent Comments: </h2> <br>
 <% current_user.comments.reverse.each do |comment|%>
 On <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>
-, at <%= comment.created_at %>:<br/>
+, <%= comment.created_at.strftime("%b %e, %Y") %>:<br/>
 <%= comment.content %><br/>
 <br/>
 <%end %>
