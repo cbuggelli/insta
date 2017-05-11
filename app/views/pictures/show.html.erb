@@ -36,7 +36,7 @@
 <%= form_for @comment, url:comments_path(@picture) do |f| %>
   <%= f.label :content %>
   <%= f.text_area :content %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", :class => 'btn btn-success' %>
 <% end %>
 <br>
 

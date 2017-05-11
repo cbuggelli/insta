@@ -1,13 +1,22 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Insta!</h1>
+  <p>
+    <a href="/users/new" class="btn btn-warning btn-lg">Sign Up</a>
+    <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
+  </p>
+
+  <div class="fluid-container">
+    <div class="row">
+    <h5 align="centered">
+  <%= form_tag login_path do %>
+  <%= label_tag 'Username'%>
+  <%= text_field_tag 'user[name]' %><br/>
+  <%= label_tag 'Password'%>
+  <%= password_field_tag 'user[password]' %><br/>
+  <%= submit_tag "Log In", :class => 'btn btn-primary' %>
+  <% end %>
+  </h5>
+  </div>
+  </div>
 </div>
 <%= flash[:notice] %>
-
-<%= form_tag login_path do %>
-<%= label_tag 'Username'%>
-<%= text_field_tag 'user[name]' %><br/>
-<%= label_tag 'Password'%>
-<%= password_field_tag 'user[password]' %><br/>
-<%= submit_tag "Log In", :class => 'btn btn-primary' %>
-<% end %><br/>
-<%= link_to "New User", new_user_path %><br/>
