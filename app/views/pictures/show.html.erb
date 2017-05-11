@@ -1,7 +1,7 @@
 <h2><%= @picture.title %></h2>
 
 <% @picture.tags.each do |tag| %>
-  <h4><%= tag.name %></h4>
+  <h4><%= link_to tag.name, tag_path(tag) %></h4>
 <% end %>
 
 
@@ -36,6 +36,12 @@
 <%= form_for @tag, url:tags_path(@picture) do |f| %>
   <%= f.label :name %>
   <%= f.text_area :name %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<h3>or add existing tag</h3>
+<%= form_for @picture, url:picture_path(@picture) do |f| %>
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
   <%= f.submit "Submit" %>
 <% end %>
 
