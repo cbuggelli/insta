@@ -17,14 +17,14 @@
 <%= image_tag @picture.image_url %>
 
 <div class="fluid-container">
-  <div class="row">
+
       <h3>Add a comment</h3>
       <%= form_for @comment, url:comments_path(@picture) do |f| %>
 
       <%= f.text_area :content %>
       <%= f.submit "Submit", :class => 'btn btn-success' %>
       <% end %>
-    </div>
+
       <h3>Add a tag</h3>
       <%= form_for @tag, url:tags_path(@picture) do |f| %>
 

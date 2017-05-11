@@ -4,18 +4,18 @@
     <a href="/users/new" class="btn btn-warning btn-lg">Sign Up</a>
     <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
   </p>
-
+  <h5 align="centered">
+<%= form_tag login_path do %>
+<%= label_tag 'Username'%>
+<%= text_field_tag 'user[name]' %><br/>
+<%= label_tag 'Password'%>
+<%= password_field_tag 'user[password]' %><br/>
+<%= submit_tag "Log In", :class => 'btn btn-primary' %>
+<% end %>
+</h5>
   <div class="fluid-container">
     <div class="row">
-    <h5 align="centered">
-  <%= form_tag login_path do %>
-  <%= label_tag 'Username'%>
-  <%= text_field_tag 'user[name]' %><br/>
-  <%= label_tag 'Password'%>
-  <%= password_field_tag 'user[password]' %><br/>
-  <%= submit_tag "Log In", :class => 'btn btn-primary' %>
-  <% end %>
-  </h5>
+
   </div>
   </div>
 </div>
