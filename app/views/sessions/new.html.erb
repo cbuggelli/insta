@@ -1,11 +1,13 @@
-<h1>Welcome to Instagraph. Please log in or sign up.</h1>
+<div class="jumbotron text-center">
+  <h1>Welcome to Insta!</h1>
+</div>
 <%= flash[:notice] %>
 
 <%= form_tag login_path do %>
-  <%= label_tag 'Username'%>
-  <%= text_field_tag 'user[name]' %><br/>
-  <%= label_tag 'Password'%>
-  <%= password_field_tag 'user[password]' %><br/>
-  <%= submit_tag "Log In" %>
+<%= label_tag 'Username'%>
+<%= text_field_tag 'user[name]' %><br/>
+<%= label_tag 'Password'%>
+<%= password_field_tag 'user[password]' %><br/>
+<%= submit_tag "Log In", :class => 'btn btn-primary' %>
 <% end %><br/>
 <%= link_to "New User", new_user_path %><br/>
