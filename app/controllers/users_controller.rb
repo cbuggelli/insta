@@ -6,20 +6,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    if params[:user][:password] == params[:user][:password_confirmation]
+    if (user_params[:password] == user_params[:password_confirmation])
       @user = User.new(user_params)
-      @user.save
-      byebug
+      # byebug
+    end
     if @user.valid?
-      # @user.save
+      @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       flash[:notice] = "Invalid credentials!, please try again"
-      redirect_to new_user_path
-    end
-    else
-      flash[:notice] = "Invalid credentials, please try again"
       redirect_to new_user_path
     end
   end

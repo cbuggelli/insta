@@ -6,12 +6,7 @@
 
 <%= link_to "Edit title", edit_picture_path %>
 
-<h3>Add a tag</h3>
-<%= form_for @tag, url:tags_path(@picture) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_area :name %>
-  <%= f.submit "Submit" %>
-<% end %>
+
 
 <br><br><br>
 <%= image_tag @picture.image_url %>
@@ -34,5 +29,12 @@
   <%= f.submit "Submit" %>
 <% end %>
 <br>
+
+<h3>Add a tag</h3>
+<%= form_for @tag, url:tags_path(@picture) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area :name %>
+  <%= f.submit "Submit" %>
+<% end %>
 
 <%= link_to "Back", user_path(current_user) %>

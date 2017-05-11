@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :comments
   validates :username, presence: true
   validates :password, presence: true
-  validates :email, inclusion: {in: ['@']}
+  validates :email, presence: true
 
   def received_comments
     user_pictures = @user.picture.map do |picture|
