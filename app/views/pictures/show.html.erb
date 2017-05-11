@@ -16,11 +16,13 @@
 
 <% @picture.comments.each do |comment| %>
 <br>
-<%= comment.created_at %>
+<%= comment.created_at.strftime("%l:%M %p %b %e, %Y") %>
 <h5> <%= comment.user.username + ": " %> </h5>
 <%= comment.content %>
 <br>
 <% end %>
+
+<br/>
 
 <h3>Add a comment</h3>
 <%= form_for @comment, url:comments_path(@picture) do |f| %>
