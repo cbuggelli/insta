@@ -1,15 +1,17 @@
-Create a user</h1>
 <%= flash[:notice] %>
 <%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %><br/>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br/>
-  <%= f.label "Confirm password" %>
-  <%= f.password_field :password_confirmation %><br/>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br/>
-  <%= f.label :profile_pic %>
-  <%= f.text_field :profile_pic %>
-  <%= f.submit "Create User" %>
+<div class="modal-body" align="center">
+  <div align="center"><h1>Sign Up</h1></div>
+  <div><%= f.label :username %></div>
+    <div><%= f.text_field :username %></div><br>
+  <div><%= f.label :password %></div>
+  <div><%= f.password_field :password %></div><br/>
+  <div><%= f.label "Confirm password" %></div>
+  <div><%= f.password_field :password_confirmation %></div><br/>
+  <div><%= f.label :email %></div>
+  <div><%= f.text_field :email %></div><br/>
+  <div><%= f.label "Profile Image (Optional)" %></div>
+  <div><%= f.text_field :profile_pic %></div>
+  <div><%= f.submit "Create User", :class => 'btn btn-success btn-large'%></div>
 <% end %>
+</div>
