@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if params[:user][:password] == params[:user][:password_confirmation] && params[:user][:password] != ""
-      @user = User.update(user_params)
+      @user.update(user_params)
       redirect_to user_path(@user)
     else
       redirect_to edit_user_path(@user)

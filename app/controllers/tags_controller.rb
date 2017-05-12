@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.create(name: tag_params[:name])
+    @tag = Tag.find_or_create_by(name: tag_params[:name])
     @picture = Picture.find(params[:picture_id])
     @picture.tags << @tag
     redirect_to picture_path(@picture)

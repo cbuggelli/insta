@@ -1,0 +1,64 @@
+Started GET "/users/6" for 127.0.0.1 at 2017-05-12 14:59:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  Comment Load (0.2ms)  SELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?  [["user_id", 6]]
+  Picture Load (0.2ms)  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  Picture Load (0.3ms)  SELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = ?  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 98ms (Views: 81.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/6/edit" for 127.0.0.1 at 2017-05-12 14:59:47 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  Rendered users/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 92ms (Views: 84.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/6" for 127.0.0.1 at 2017-05-12 15:00:08 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q9u5+QJIY3KJLtHwRHLqmW5XlpYrN1y+LX8g65gQKbb5jkBak3dnSPNQ5rRWPwIrArBTzLnuJivEmx8xBFngPA==", "user"=>{"username"=>"Bob Ross", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"bob@ross.com", "profile_pic"=>"https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"}, "commit"=>"Confirm", "id"=>"6"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameter: :password_confirmation
+  User Load (0.3ms)  SELECT "users".* FROM "users"
+   (0.0ms)  begin transaction
+  SQL (1.1ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$9zArO9hTT1K9vxe/ybTKgOGR2Tz3zpEdL29hR8dTxXX6qJjpQs7fO"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:08.981398"], ["id", 1]]
+   (1.0ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.7ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$Wnz1Ber7iX5jATnz4IZc6.lJ8r4BywTrvscq84p9pd6eDCDTpRn/i"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.089176"], ["id", 2]]
+   (9.7ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (2.9ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$zmDchhAjqv80MJ168cnp4eb9sbGmcVfAS0Q8PszA8ZBm/ArYtByJK"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.207271"], ["id", 3]]
+   (9.1ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$dPfC92QJ2KIXydQ2enxGC.5leYi5cJTahDRgyXcv8Gm/bHfMh0pfe"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.332391"], ["id", 4]]
+   (7.2ms)  commit transaction
+   (0.2ms)  begin transaction
+  SQL (0.5ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$m4ReoNK3VidjiPHPbueCH.RWZGQeKeFAqb3fJRqeyegT95m.L3.tC"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.441593"], ["id", 5]]
+   (9.0ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  UPDATE "users" SET "password_digest" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password_digest", "$2a$10$nC/HMUjGV6eWOpD7U4I0B.ddCxvNplXsdbNTgJWVWQOk0JOmLuYji"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.560332"], ["id", 6]]
+   (1.0ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$ricixfVPoB98LcZHh6OmBuQi71woPCehn1MvhBN1dqn6B6JvbEom6"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.665042"], ["id", 7]]
+   (1.0ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$su0aOSgmetadswv.XRhiHenYieSEW9XQw2/unC9Ol7O/H9jJrbjV2"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.761573"], ["id", 8]]
+   (9.0ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$jKvb.v9tetG99LWQsEfGr.KzGT4wP3wWQAxx9BhEm7TYEfO8GApIG"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:09.897515"], ["id", 9]]
+   (9.2ms)  commit transaction
+   (0.2ms)  begin transaction
+  SQL (0.5ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$jlJjGzT6xAEOr/IkHAcHNuR1D1cYpdHD6x6z5LyI4tBDsj7h4uzzW"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:10.016676"], ["id", 10]]
+   (8.7ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  UPDATE "users" SET "username" = ?, "password_digest" = ?, "email" = ?, "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["username", "Bob Ross"], ["password_digest", "$2a$10$7EcAYnZjXeTgUJsm/drlue1Cpn6Edt6r8savFgmGhp7hRs6dhIPk2"], ["email", "bob@ross.com"], ["profile_pic", "https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg"], ["updated_at", "2017-05-12 19:00:10.132977"], ["id", 11]]
+   (10.4ms)  commit transaction
+Redirected to http://localhost:3000/users/1%2F2%2F3%2F4%2F5%2F6%2F7%2F8%2F9%2F10%2F11
+Completed 302 Found in 1265ms (ActiveRecord: 85.3ms)
