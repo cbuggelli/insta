@@ -21,12 +21,7 @@
     <% if flash[:notice] %>
     <%= flash[:notice] %>
     <% end %>
-    <div class="fluid-container">
-      <div class="jumbotron text-center">
-        <h1 align="center">
-          Welcome to Insta!
-        </h1>
-      </div>
+
 
 
 
@@ -34,7 +29,7 @@
     </div>
     <% if logged_in? %>
     <div>
-      <%= link_to "Log Out", logout_path, method: "DELETE" %>
+      <div class='btn btn-warning'><%= link_to "Log Out!", logout_path, method: "DELETE" %></div>
     </div>
     <% end %>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

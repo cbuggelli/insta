@@ -1,12 +1,10 @@
-MOVE THESE SOMEWHERE!
-<h3>
-  Popular Tags:
-</h3>
-<% Tag.most_popular.each do |tag| %>
-<li>
-  <%= tag.name %>
-</li>
-<% end %>
+<div class="fluid-container">
+  <div class="jumbotron text-center">
+    <h1 align="center">
+      <strong><%= current_user.username %></strong>
+    </h1>
+  </div>
+</div>
 
 <div class="row">
   <% @pictures.each do |picture|%>
