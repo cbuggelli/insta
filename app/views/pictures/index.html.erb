@@ -1,7 +1,7 @@
 <div class="fluid-container">
   <div class="jumbotron text-center">
     <h1 align="center">
-      <strong><%= current_user.username %></strong>
+      <strong><%= link_to "#{current_user.username}", user_path(current_user) %></strong>
     </h1>
   </div>
 </div>

@@ -8,7 +8,9 @@
 
     </h1>
     <h3 align="center"> <%= @user.email %>  </h3>
-    <h2 align="center"><strong> <%= link_to "Edit Profile", edit_user_path %></strong> </h2>
+    <h2 align="center">
+      <strong><%= link_to "Edit Profile", edit_user_path %></strong>
+    </h2>
   </div>
 </div>
 
@@ -36,7 +38,7 @@
     <%end %>
   </div>
 
-  <div class=container-fluid>
+  <div align="right">
     <h1><%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-warning'} %></h1>
     <h2>
       My Pictures
