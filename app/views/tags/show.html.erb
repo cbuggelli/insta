@@ -1,7 +1,7 @@
 <div class="row">
 
   <h4><%= @tag.name %></h4>
-  <% @tag.pictures.each do |picture|%>
+  <% @tag.pictures.each do |picture|%><br/>
 
   <div class="col-sm-3">
     <h5 align="center"><%= link_to "#{picture.title}", picture_path(picture) %></h5>
