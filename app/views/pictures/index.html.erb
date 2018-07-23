@@ -1,8 +1,18 @@
 <div class="fluid-container">
   <div class="jumbotron text-center">
-    <h1 align="center">
-      <strong><%= link_to "#{current_user.username}", user_path(current_user) %></strong>
-    </h1>
+    <div style="float: left; width: 150px;">
+      <h4 align="left">
+        <strong>Logged in as <%= link_to "#{current_user.username}", user_path(current_user) %></strong>
+      </h4>
+    </div>
+    <div style="display: block; width: 300px; margin: 0 auto; padding-right: 150px;">
+      <h1>
+        <%= link_to "Insta", pictures_path %>
+      </h1>
+      <h2>
+        Front Page
+      </h2>
+    </div>
   </div>
 </div>
 
@@ -14,6 +24,7 @@
     <%=link_to  picture_path(picture)  do %>
     <%= image_tag (picture.image_url), class:"img-fluid img-round" %>
     <% end %>
+    <br/>
     posted by:
     <%= picture.user.username %>
     at:

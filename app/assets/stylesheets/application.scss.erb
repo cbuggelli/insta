@@ -30,10 +30,29 @@ body {
   padding-left: 50px;
   padding-right: 50px;
   font-family: 'Varela Round';
+  // display: grid;
+  // grid-template-columns: 100px 200px 300px;
+  // grid-template-rows: 100px 200px 300px;
 }
 
 .jumbotron {
-background-image: url(<%= asset_path('jumbotron.jpg') %>);
+  background-image: url(<%= asset_path('jumbotron.jpg') %>);
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 200px 300px;
+  grid-template-rows: 100px 200px 300px;
+}
+
+.profileLinks {
+  position: inherit;
+}
+
+.banner div {
+    float: left;
+    clear: none;
 }
 /*=== 2. Anchor Link ===*/
 a {
