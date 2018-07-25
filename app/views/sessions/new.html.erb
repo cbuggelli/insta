@@ -1,7 +1,7 @@
 <div class="jumbotron text-center">
-  <h1>Welcome to Insta!</h1>
+  <span style="padding-right: 10px;"><h2>Welcome to Insta!</h2></span>
     <% if !logged_in? %>
-
+    <h1>Welcome to Insta!</h1>
   <p>
     <a href="/users/new" class="btn btn-warning btn-lg">Sign Up</a>
     <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
@@ -19,9 +19,14 @@
 
 
 <% else %>
-  <h2>You are logged in as <strong><%= current_user.username %></strong>. Click <%= link_to "here", logout_path, method: "DELETE" %> to log out.</h2>
-  <h2><%= link_to "Back to all pictures", pictures_path %></h2>
-  <h2><%= link_to "Back to your profile", user_path(current_user)%></h2>
+  <div>
+    <h2>You are logged in as <strong><%= current_user.username %></strong>. Click <%= link_to "here", logout_path, method: "DELETE" %> to log out.</h2>
+  <div>
+
+  <div>
+    <h2><%= link_to "Back to all pictures", pictures_path %></h2>
+    <h2><%= link_to "Back to your profile", user_path(current_user)%></h2>
+  </div>
 
 <% end %>
 <%= flash[:notice] %>
