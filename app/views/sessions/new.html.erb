@@ -7,26 +7,19 @@
     <a href="/pictures" class="btn btn-success btn-lg">View Pictures</a>
   </p>
   <h5 align="centered">
-<%= form_tag login_path do %>
-<%= label_tag 'Username'%>
-<%= text_field_tag 'user[name]' %><br/>
-<%= label_tag 'Password'%>
-<%= password_field_tag 'user[password]' %><br/>
-<%= submit_tag "Log In", :class => 'btn btn-primary' %>
-<% end %>
-</h5>
-
-
-
-
-
-
-  </div>
-  </div>
+    <%= form_tag login_path do %>
+      <%= label_tag 'Username'%>
+      <%= text_field_tag 'user[name]' %><br/>
+      <%= label_tag 'Password'%>
+      <%= password_field_tag 'user[password]' %><br/>
+      <%= submit_tag "Log In", :class => 'btn btn-primary' %>
+    <% end %>
+  </h5>
 </div>
 
+
 <% else %>
-  <h2>You are logged in as <h1><strong><%= current_user.username %></strong></h1>Click <%= link_to "here", logout_path, method: "DELETE" %> to log out.</h2>
+  <h2>You are logged in as <strong><%= current_user.username %></strong>. Click <%= link_to "here", logout_path, method: "DELETE" %> to log out.</h2>
   <h2><%= link_to "Back to all pictures", pictures_path %></h2>
   <h2><%= link_to "Back to your profile", user_path(current_user)%></h2>
 
