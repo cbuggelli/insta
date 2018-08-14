@@ -28,7 +28,6 @@ class PicturesController < ApplicationController
  end
 
  def show
-
    @picture = Picture.find(params[:id])
    @comment = Comment.new
    @tag = Tag.new

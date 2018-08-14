@@ -1,13 +1,21 @@
 <%= flash[:notice] %>
-<%= form_for @picture do |f| %>
-  <div class="modal-body" align="center">
-    <div align="center"><h1>Add a Picture</h1></div>
-    <%= f.label :image_url %>
-      <div><%= f.text_field :image_url %></div><br>
-    <div><%= f.label :title %></div>
-    <div><%= f.text_field :title %></div><br/>
-    <div><%= f.label :tags %></div><br/>
-    <div><%= f.text_area :tags, value: nil %></div>
-    <div><%= f.submit "Add Picture", :class => 'btn btn-success btn-large'%></div>
-  </div>
-<% end %>
+
+<div class="modal-body" align="center">
+  <%= form_for @picture do |f| %>
+      <h1>Add a Picture</h1>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+      <br/>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <br/>
+      <%= f.label :tags %>
+      <%= f.text_area :tags, value: nil %>
+      <br/>
+      <%= f.submit "Add Picture", :class => 'btn btn-success btn-lg'%>
+  <% end %>
+</div>
+
+<div align="center">
+  <%= link_to "Cancel", user_path(current_user), class: 'btn btn-danger btn-lg' %>
+</div>
