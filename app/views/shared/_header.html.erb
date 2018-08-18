@@ -1,0 +1,31 @@
+<div class="fluid-container">
+  <div class="jumbotron text-center">
+    <div style="float: left; width: 150px;">
+      <h4 align="left">
+        <strong>Logged in as <%= link_to "#{current_user.username}", user_path(current_user) %></strong>
+      </h4>
+      <% if local_assigns[:profile] == true %>
+        <h4 align="left">
+          <%= link_to "Edit Profile", edit_user_path %>
+        </h4>
+      <% end %>
+      <h4 align="left">
+        <%= link_to "Log out", logout_path, method: "DELETE" %>
+      </h4>
+    </div>
+    <div style="display: block; width: 300px; margin: 0 auto; padding-right: 150px;">
+      <h1>
+        <%= link_to "Insta", pictures_path %>
+      </h1>
+      <% if local_assigns[:profile] == true %>
+        <h2>
+          User Profile
+        </h2>
+      <% else %>
+        <h2>
+          Front Page
+        </h2>
+      <% end %>
+    </div>
+  </div>
+</div>
