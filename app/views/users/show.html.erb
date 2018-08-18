@@ -10,6 +10,9 @@
       <h4 align="left">
         <%= link_to "Edit Profile", edit_user_path %>
       </h4>
+      <h4 align="left">
+        <%= link_to "Log out", logout_path, method: "DELETE" %>
+      </h4>
     </div>
     <div style="display: block; width: 300px; margin: 0 auto; padding-right: 150px;">
       <h1>
@@ -26,12 +29,6 @@
   <div class="row">
     <div class="col-3">
       <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-warning btn-block btn-lg'} %>
-      <!-- <h2>
-        <%= link_to "All Pictures", pictures_path %>
-      </h2> -->
-    </div>
-    <div class="col-3">
-
     </div>
   </div>
   <br/>
@@ -55,35 +52,30 @@
         <br/>
       <% end %>
     </div>
-  <!-- <div></div> -->
-  <div class="col">
-    <h2>
-      My Pictures:
-    </h2>
-    <div class="row">
-      <!-- <% @pictures.each do |picture|%>
-        <h3>
-          <%= link_to "#{picture.title}", picture_path(picture) %>
-        </h3>
-        <div style="padding-bottom: 60px;">
-          <%= link_to image_tag(picture.image_url), picture_path(picture) %>
-        </div>
-      <% end %> -->
-      <% @pictures.each do |picture|%>
-        <div class="col-sm-3">
-          <h5 align="center">
+    <div class="col">
+      <h2>
+        My Pictures:
+      </h2>
+      <div class="row">
+        <!-- <% @pictures.each do |picture|%>
+          <h3>
             <%= link_to "#{picture.title}", picture_path(picture) %>
-          </h5>
-          <%=link_to  picture_path(picture)  do %>
-          <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
-          <% end %>
-        </div>
-      <% end %>
+          </h3>
+          <div style="padding-bottom: 60px;">
+            <%= link_to image_tag(picture.image_url), picture_path(picture) %>
+          </div>
+        <% end %> -->
+        <% @pictures.each do |picture|%>
+          <div class="col-sm-3">
+            <h5 align="center">
+              <%= link_to "#{picture.title}", picture_path(picture) %>
+            </h5>
+            <%=link_to  picture_path(picture)  do %>
+              <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-  <!-- <div></div>
-
-  <div></div> -->
-
 </div>

@@ -12,3 +12,7 @@
   <%= f.text_field :profile_pic, :value => current_user.profile_pic%> <br>
   <%= f.submit "Confirm", {class: 'btn btn-primary'} %>
 <% end %>
+<br/>
+<div align="left">
+  <%= link_to "Cancel", user_path(current_user), class: 'btn btn-danger btn-lg' %>
+</div>
