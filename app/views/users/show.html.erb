@@ -22,45 +22,68 @@
   </div>
 </div>
 
-<div class="grid-container">
-  <div>
-    <%= image_tag @user.profile_pic %>
-    <br/>
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-3">
+      <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-warning btn-block btn-lg'} %>
+      <!-- <h2>
+        <%= link_to "All Pictures", pictures_path %>
+      </h2> -->
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-3">
+      <div>
+        <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
+      </div>
+      <br/>
       <h2>
         Recent Comments:
       </h2>
       <% current_user.comments.reverse.each do |comment|%>
-      On
-      <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>
-      ,
-      <%= comment.created_at.strftime("%b %e, %Y") %>:
-      <br/>
-      <%= comment.content %>
-      <br/>
-      <br/>
-    <% end %>
-  </div>
-  <div></div>
-  <div>
-    <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-warning btn-block btn-lg'} %>
-    <!-- <h2>
-      <%= link_to "All Pictures", pictures_path %>
-    </h2> -->
-  </div>
-  <div></div>
-
-  <div></div>
-  <div>
+        On
+        <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>
+        ,
+        <%= comment.created_at.strftime("%b %e, %Y") %>:
+        <br/>
+        <%= comment.content %>
+        <br/>
+        <br/>
+      <% end %>
+    </div>
+  <!-- <div></div> -->
+  <div class="col">
     <h2>
       My Pictures:
     </h2>
-    <% @pictures.each do |picture|%>
-    <h3>
-      <%= link_to "#{picture.title}", picture_path(picture) %>
-    </h3>
-    <div style="padding-bottom: 60px;">
-      <%= link_to image_tag(picture.image_url), picture_path(picture) %>
+    <div class="row">
+      <!-- <% @pictures.each do |picture|%>
+        <h3>
+          <%= link_to "#{picture.title}", picture_path(picture) %>
+        </h3>
+        <div style="padding-bottom: 60px;">
+          <%= link_to image_tag(picture.image_url), picture_path(picture) %>
+        </div>
+      <% end %> -->
+      <% @pictures.each do |picture|%>
+        <div class="col-sm-3">
+          <h5 align="center">
+            <%= link_to "#{picture.title}", picture_path(picture) %>
+          </h5>
+          <%=link_to  picture_path(picture)  do %>
+          <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
+</div>
+  <!-- <div></div>
+
+  <div></div> -->
+
 </div>
