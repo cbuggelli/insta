@@ -24,7 +24,7 @@
     </div>
   </div>
 </div> -->
-<%= render partial: "shared/header", page: true %>
+<%= render "shared/header", page: "User Profile" %>
 
 <div class="fluid-container">
   <div class="row">
@@ -38,6 +38,10 @@
       <div>
         <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
       </div>
+      <br/>
+      <h4 align="left">
+        <%= link_to "Edit Profile", edit_user_path %>
+      </h4>
       <br/>
       <h2>
         Recent Comments:
