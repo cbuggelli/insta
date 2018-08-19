@@ -24,15 +24,19 @@
   <% @pictures.each do |picture|%>
 
   <div class="col-sm-3">
-    <h5 align="center"><%= link_to "#{picture.title}", picture_path(picture) %></h5>
+    <h4 align="center">
+      <%= link_to "#{picture.title}", picture_path(picture) %>
+    </h4>
     <%=link_to  picture_path(picture)  do %>
     <%= image_tag (picture.image_url), class:"img-fluid img-round" %>
     <% end %>
     <br/>
-    posted by:
-    <%= picture.user.username %>
-    at:
-    <%=picture.created_at %>
+    <h5>
+      posted by
+      <%= link_to picture.user.username, user_path(picture.user) %>
+      on
+      <%=picture.created_at.strftime("%b %e, %Y") %>
+    </h5>
   </div>
   <% end %>
 </div>

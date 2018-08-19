@@ -1,29 +1,5 @@
 <%= flash[:notice] %>
 
-<!-- Display Current User Name at top of page. -->
-<!-- <div class="fluid-container">
-  <div class="jumbotron text-center">
-    <div style="float: left; width: 150px;">
-      <h4 align="left">
-        <strong>Logged in as <%= current_user.username %></strong>
-      </h4>
-      <h4 align="left">
-        <%= link_to "Edit Profile", edit_user_path %>
-      </h4>
-      <h4 align="left">
-        <%= link_to "Log out", logout_path, method: "DELETE" %>
-      </h4>
-    </div>
-    <div style="display: block; width: 300px; margin: 0 auto; padding-right: 150px;">
-      <h1>
-        <%= link_to "Insta", pictures_path %>
-      </h1>
-      <h2>
-        User Profile
-      </h2>
-    </div>
-  </div>
-</div> -->
 <%= render "shared/header", page: "User Profile" %>
 
 <div class="fluid-container">
@@ -50,8 +26,7 @@
       </h2>
       <% current_user.comments.reverse.each do |comment|%>
         On
-        <%= link_to "#{comment.picture.title}", picture_path(comment.picture) %>
-        ,
+        <%= link_to "#{comment.picture.title},", picture_path(comment.picture) %>
         <%= comment.created_at.strftime("%b %e, %Y") %>:
         <br/>
         <%= comment.content %>
@@ -74,9 +49,9 @@
         <% end %> -->
         <% @pictures.each do |picture|%>
           <div class="col-sm-3">
-            <h5 align="center">
+            <h4 align="center">
               <%= link_to "#{picture.title}", picture_path(picture) %>
-            </h5>
+            </h4>
             <%=link_to  picture_path(picture)  do %>
               <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
             <% end %>
