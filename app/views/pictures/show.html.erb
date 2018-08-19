@@ -1,82 +1,91 @@
-<div class="fluid-container" align="center">
-  <div class="fluid-container">
-    <div class="jumbotron text-center">
-      <div style="float: left; width: 150px;">
-        <h4 align="left">
-          <strong>Logged in as <%= link_to "#{current_user.username}", user_path(current_user) %></strong>
-        </h4>
-        <h4 align="left">
-          <%= link_to "Log out", logout_path, method: "DELETE" %>
-        </h4>
-      </div>
-      <div style="display: block; width: 300px; margin: 0 auto; padding-right: 150px;">
-        <h1>
-          <%= link_to "Insta", pictures_path %>
-        </h1>
-        <h2>
-          Image View
-        </h2>
-      </div>
-    </div>
+<%= render "shared/header", page: "Image View" %>
 
+<div align="center">
   <h2>
     <%= @picture.title %>
   </h2>
+
   <% if @picture.user == current_user %>
     <h4>
       <%= link_to "Edit title", edit_picture_path %>
     </h4>
   <% end %>
 
-  <%= image_tag @picture.image_url %>
+  <div>
+    <%= image_tag @picture.image_url %>
+  </div>
 
   <div class="fluid-container">
     <br/>
+
     <h5>
       Tags:
       <% @picture.tags.each do |tag| %>
         <%= link_to tag.name, tag_path(tag) %>
       <% end %>
     </h5>
+
     <br/>
+
     <div style="width: 700px;" align="left">
-      <h3>Add a comment</h3>
+      <h3>
+        Add a comment
+      </h3>
+
       <%= form_for @comment, url:comments_path(@picture) do |f| %>
         <%= f.text_area :content, size: "100" %>
-        <%= f.submit "Submit", :class => 'btn btn-success' %>
+        <%= f.submit "Submit", :class => 'btn btn-success btn-lg' %>
       <% end %>
 
-      <h3>Add a tag</h3>
-      <%= form_for @tag, url:tags_path(@picture) do |f| %>
-        <%= f.text_area :name, size: 20 %>
-        <%= f.submit "Submit", :class => 'btn btn-success btn-large' %>
-      <% end %>
+      <% if @picture.user == current_user %>
+        <h3>
+          Add a tag
+        </h3>
 
-      <h3>Add Existing Tag</h3>
-      <%= form_for @picture, url:picture_path(@picture) do |f| %>
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
-        <%= f.submit "Submit" %>
+        <%= form_for @tag, url:tags_path(@picture) do |f| %>
+          <%= f.text_area :name, size: 20 %>
+          <%= f.submit "Submit", :class => 'btn btn-success btn-large' %>
+        <% end %>
+
+        <h3>
+          Add Existing Tag
+        </h3>
+
+        <%= form_for @picture, url:picture_path(@picture) do |f| %>
+          <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
+          <%= f.submit "Submit" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <br/>
+
+    <div style="width: 700px;" align="left">
+      <h2>
+        <strong>
+          <% if @picture.comments.count == 1 %>
+            <%= "#{@picture.comments.count} Comment" %>
+          <% else %>
+            <%= "#{@picture.comments.count} Comments" %>
+          <% end %>
+        </strong>
+      </h2>
+
+      <% @picture.comments.each do |comment| %>
+        <div>
+          <h4>
+            <strong>
+              <%= link_to comment.user.username + " ", user_path(comment.user) %>
+            </strong>
+            on
+            <%= " " + comment.created_at.strftime("%b %e, %l:%M %p") %>
+          </h4>
+          <h3>
+            <%= comment.content %>
+          </h3>
+        <div>
+        <br>
       <% end %>
     </div>
   </div>
-
-  <h2>
-    <strong>
-      Comments
-    </strong>
-  </h2>
-
-  <% @picture.comments.each do |comment| %>
-    <%= comment.created_at.strftime("%l:%M %p %b %e") + " : " %>
-    <h3>
-      <strong><%= comment.user.username + "  :  " %></strong>
-      <%= comment.content %>
-      <br>
-    </h3>
-  <% end %>
-  </div>
 </div>
-
-<!-- <%= link_to "Back", pictures_path %>
-<br>
-<%= link_to "My profile", user_path(current_user) %> -->

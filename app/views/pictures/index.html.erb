@@ -27,8 +27,8 @@
     <h4 align="center">
       <%= link_to "#{picture.title}", picture_path(picture) %>
     </h4>
-    <%=link_to  picture_path(picture)  do %>
-    <%= image_tag (picture.image_url), class:"img-fluid img-round" %>
+    <%= link_to picture_path(picture) do %>
+      <%= image_tag (picture.image_url), class:"img-fluid img-round" %>
     <% end %>
     <br/>
     <h5>
