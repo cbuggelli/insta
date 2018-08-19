@@ -1,17 +1,28 @@
 <div class="fluid-container">
   <div class="jumbotron text-center">
-    <div style="float: left; width: 150px;">
-      <h4 align="left">
-        <strong>Logged in as <%= link_to "#{current_user.username}", user_path(current_user) %></strong>
-      </h4>
-      <h4 align="left">
-        <%= link_to "Log out", logout_path, method: "DELETE" %>
-      </h4>
-    </div>
+    <% if logged_in? %>
+      <div style="float: left; width: 150px;">
+        <h4 align="left">
+          <strong>Logged in as <%= link_to "#{current_user.username}", user_path(current_user) %></strong>
+        </h4>
+        <h4 align="left">
+          <%= link_to "Log out", logout_path, method: "DELETE" %>
+        </h4>
+      </div>
+    <% else %>
+      <div style="float: left; width: 150px;">
+      </div>
+    <% end %>
     <div style="display: block; width: 300px; margin: 0 auto; padding-right: 150px;">
-      <h1>
-        <%= link_to "Insta", pictures_path %>
-      </h1>
+      <% if logged_in? %>
+        <h1>
+          <%= link_to "Insta", pictures_path %>
+        </h1>
+      <% else %>
+        <h1>
+          <%= link_to "Insta", login_path %>
+        </h1>
+      <% end %>
       <h2>
         <%= local_assigns[:page] %>
       </h2>

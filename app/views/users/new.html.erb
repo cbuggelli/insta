@@ -1,17 +1,38 @@
 <%= flash[:notice] %>
+
+<%= render "shared/header", page: "Sign Up" %>
+
 <%= form_for @user do |f| %>
   <div class="modal-body" align="center">
-    <div align="center"><h1>Sign Up</h1></div>
-    <div><%= f.label :username %></div>
-    <div><%= f.text_field :username %></div><br>
-    <div><%= f.label :password %></div>
-    <div><%= f.password_field :password %></div><br/>
-    <div><%= f.label "Confirm password" %></div>
-    <div><%= f.password_field :password_confirmation %></div><br/>
-    <div><%= f.label :email %></div>
-    <div><%= f.text_field :email %></div><br/>
-    <div><%= f.label "Profile Image (Optional)" %></div>
-    <div><%= f.text_field :profile_pic %></div>
-    <div><%= f.submit "Create User", :class => 'btn btn-success btn-large'%></div>
+    <%= f.label :username %>
+    <br/>
+    <%= f.text_field :username %>
+    <br/>
+    <br/>
+    <%= f.label :password %>
+    <br/>
+    <%= f.password_field :password %>
+    <br/>
+    <br/>
+    <%= f.label "Confirm password" %>
+    <br/>
+    <%= f.password_field :password_confirmation %>
+    <br/>
+    <br/>
+    <%= f.label :email %>
+    <br/>
+    <%= f.text_field :email %>
+    <br/>
+    <br/>
+    <%= f.label "Profile Image (Optional)" %>
+    <br/>
+    <%= f.text_field :profile_pic %>
+    <br/>
+    <br/>
+    <%= f.submit "Create User", :class => 'btn btn-success btn-lg'%>
+    <br/>
+    <br/>
+    <%= link_to "Cancel", login_path, class: 'btn btn-danger btn-lg' %>
   </div>
+
 <% end %>

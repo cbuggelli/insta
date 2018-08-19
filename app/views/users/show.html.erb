@@ -39,9 +39,11 @@
         <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
       </div>
       <br/>
-      <h4 align="left">
-        <%= link_to "Edit Profile", edit_user_path %>
-      </h4>
+      <% if @user.id == current_user.id %>
+        <h4 align="left">
+          <%= link_to "Edit Profile", edit_user_path %>
+        </h4>
+      <% end %>
       <br/>
       <h2>
         Recent Comments:
