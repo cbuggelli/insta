@@ -32,7 +32,6 @@ class PicturesController < ApplicationController
    @comment = Comment.new
    @tag = Tag.new
    @picture_tag = PictureTag.create(tag_id: @tag.id, picture_id: @picture.id)
-  #  byebug
  end
 
  def edit
@@ -61,7 +60,7 @@ class PicturesController < ApplicationController
  end
 
  def require_login
-    return head(:forbidden) unless session.include? :user_id
-  end
+   return head(:forbidden) unless session.include? :user_id
+ end
 
 end
