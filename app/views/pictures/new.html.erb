@@ -1,5 +1,7 @@
 <%= flash[:notice] %>
 
+<%= render "shared/header", page: "Add Picture" %>
+
 <div class="modal-body" align="center">
   <%= form_for @picture do |f| %>
       <h1>Add a Picture</h1>
