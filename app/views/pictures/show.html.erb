@@ -28,12 +28,14 @@
     <br/>
 
     <div style="width: 700px;" align="left">
-      <h3>
+      <!-- <h3>
         Add a comment
-      </h3>
+      </h3> -->
 
-      <%= form_for @comment, url:comments_path(@picture) do |f| %>
-        <%= f.text_area :content, size: "100" %>
+      <%= form_for @comment, url: comments_path(@picture), html: { class: "form-horizontal center", align: "center" } do |f| %>
+      <div class="form-group">
+        <%= f.text_area :content, size: "100", placeholder: "Leave a comment" %>
+      </div>
         <%= f.submit "Submit", :class => 'btn btn-success btn-lg' %>
       <% end %>
 
