@@ -23,7 +23,7 @@
 <div class="row">
   <% @pictures.each do |picture|%>
 
-  <div class="col-sm-3">
+  <div class="col-sm-3" align="center">
     <h4 align="center">
       <%= link_to "#{picture.title}", picture_path(picture) %>
     </h4>
