@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :relationships
   resources :pictures_tags
   resources :pictures
   resources :users
