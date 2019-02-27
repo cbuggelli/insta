@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :relationships
   resources :pictures_tags
   resources :pictures
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   get '/login', to: 'sessions#new', as: 'new_session'
   post '/login', to: 'sessions#create', as: 'login'
