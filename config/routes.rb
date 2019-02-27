@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :relationships
   resources :pictures_tags
   resources :pictures
+  resources :relationships,       only: [:create, :destroy]
   resources :users do
     member do
       get :following, :followers
