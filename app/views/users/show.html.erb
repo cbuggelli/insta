@@ -15,6 +15,13 @@
         <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
       </div>
       <br/>
+
+      <%= render 'follow_form' if logged_in? %>
+
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      
       <% if @user.id == current_user.id %>
         <h4 align="left">
           <%= link_to "Edit Profile", edit_user_path %>
