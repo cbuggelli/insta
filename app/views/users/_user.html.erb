@@ -1,4 +1,6 @@
+<%= stylesheet_link_tag "users" %>
+
 <li>
-  <%= user.profile_pic %>
+  <img class="profile-pic" src=<%=user.profile_pic%>>
   <%= link_to user.username, user %>
 </li>
