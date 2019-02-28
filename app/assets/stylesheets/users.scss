@@ -17,7 +17,7 @@ profileLinks {
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
+    border-left: 1px solid;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -31,4 +31,8 @@ profileLinks {
   strong {
     display: block;
   }
+}
+
+.profile-pic {
+  width: 10px;
 }
