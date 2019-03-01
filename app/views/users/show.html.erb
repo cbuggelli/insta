@@ -5,9 +5,18 @@
 <div class="fluid-container">
   <div class="row">
     <div class="col-3">
-      <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-warning btn-block btn-lg'} %>
+      <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
     </div>
   </div>
+  <% if @user.id == current_user.id %>
+    <br/>
+    <div class="row">
+      <div class="col-3">
+        <%= button_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
+      </div>
+    </div>
+  <% end %>
+
   <br/>
   <div class="row">
     <div class="col-3">
@@ -22,11 +31,6 @@
         <%= render 'shared/stats' %>
       </section>
       
-      <% if @user.id == current_user.id %>
-        <h4 align="left">
-          <%= link_to "Edit Profile", edit_user_path %>
-        </h4>
-      <% end %>
       <br/>
       <h2>
         Recent Comments:
