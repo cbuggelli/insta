@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag "users" %>
 
+<%= render "shared/header", page: @title %>
+
 <% provide(:title, @title) %>
 <div class="row">
   <aside class="col-md-4">
@@ -21,9 +23,8 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <h3><%= @title %></h3>
     <% if @users.any? %>
-      <ul class="users follow">
+      <ul class="users-follow">
         <%= render @users %>
       </ul>
       <%= will_paginate %>
