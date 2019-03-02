@@ -6,15 +6,12 @@
 
 <div class="fluid-container">
   <div class="col-3">
-    <div class="row">
-      <div class="col">
-        <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
-      </div>
-    </div>
     <% if @user.id == current_user.id %>
       <br/>
       <div class="row">
         <div class="col">
+          <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
+          <br/>
           <%= button_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
         </div>
       </div>
@@ -38,7 +35,7 @@
         <h2>
           Recent Comments:
         </h2>
-        <% current_user.comments.reverse.each do |comment|%>
+        <% @user.comments.reverse.each do |comment|%>
           On
           <%= link_to "#{comment.picture.title},", picture_path(comment.picture) %>
           <%= comment.created_at.strftime("%b %e, %Y") %>:
