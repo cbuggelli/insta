@@ -1,10 +1,12 @@
+<%= stylesheet_link_tag "users" %>
+
 <% provide(:title, @title) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <%= @user.profile_pic %>
+      <%=link_to image_tag(@user.profile_pic), @user%>
       <h1><%= @user.username %></h1>
-      <span><%= link_to "view my profile", @user %></span>
+      <span><%= link_to "View my profile", @user %></span>
       <span><b>Pictures:</b> <%= @user.pictures.count %></span>
     </section>
     <section class="stats">
