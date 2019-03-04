@@ -55,20 +55,12 @@
     </div>
     <div class="col" style="padding-top: 1em;">
       <div class="row">
-        <!-- <% @pictures.each do |picture|%>
-          <h3>
-            <%= link_to "#{picture.title}", picture_path(picture) %>
-          </h3>
-          <div style="padding-bottom: 60px;">
-            <%= link_to image_tag(picture.image_url), picture_path(picture) %>
-          </div>
-        <% end %> -->
-        <% @pictures.each do |picture|%>
+        <% @pictures.reverse_each do |picture|%>
           <div class="col-sm-3">
             <h4 align="center">
               <%= link_to "#{picture.title}", picture_path(picture) %>
             </h4>
-            <%=link_to  picture_path(picture)  do %>
+            <%=link_to picture_path(picture)  do %>
               <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
             <% end %>
           </div>
