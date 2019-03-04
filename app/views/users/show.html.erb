@@ -42,13 +42,16 @@
             Recent Comments:
           </h2>
           <% @user.comments.reverse.each do |comment|%>
-            On
+            <div class="comments">
+            <strong>On
             <%= link_to "#{comment.picture.title},", picture_path(comment.picture) %>
             <%= comment.created_at.strftime("%b %e, %Y") %>:
+            </strong>
             <br/>
             <%= comment.content %>
             <br/>
             <br/>
+            </div>
           <% end %>
         </div>
       </div>
