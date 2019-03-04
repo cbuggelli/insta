@@ -5,71 +5,75 @@
 <%= render "shared/header", page: "User Profile" %>
 
 <div class="fluid-container">
-  <div class="col-3">
-    <% if @user.id == current_user.id %>
+  <div class="row">
+    <div class="col-3">
+      <% if @user.id == current_user.id %>
+        <br/>
+        <div class="row">
+          <div class="col">
+            <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
+            <br/>
+            <%= button_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
+          </div>
+        </div>
+      <% end %>
+
       <br/>
       <div class="row">
         <div class="col">
-          <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
+          <div>
+            <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
+          </div>
           <br/>
-          <%= button_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
-        </div>
-      </div>
-    <% end %>
 
-    <br/>
-    <div class="row">
-      <div class="col">
-        <div>
-          <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
-        </div>
-        <br/>
+          <%= render 'follow_form' if logged_in? %>
 
-        <%= render 'follow_form' if logged_in? %>
+          <section class="stats">
+            <%= render 'shared/stats' %>
+          </section>
+          
+          <br/>
 
-        <section class="stats">
-          <%= render 'shared/stats' %>
-        </section>
-        
-        <br/>
-        <h2>
-          Recent Comments:
-        </h2>
-        <% @user.comments.reverse.each do |comment|%>
-          On
-          <%= link_to "#{comment.picture.title},", picture_path(comment.picture) %>
-          <%= comment.created_at.strftime("%b %e, %Y") %>:
+          <h2>Pictures: <%= @user.pictures.count %></h2>
+
           <br/>
-          <%= comment.content %>
-          <br/>
-          <br/>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="pictures">
-    <h2>
-      My Pictures:
-    </h2>
-    <div class="row">
-      <!-- <% @pictures.each do |picture|%>
-        <h3>
-          <%= link_to "#{picture.title}", picture_path(picture) %>
-        </h3>
-        <div style="padding-bottom: 60px;">
-          <%= link_to image_tag(picture.image_url), picture_path(picture) %>
-        </div>
-      <% end %> -->
-      <% @pictures.each do |picture|%>
-        <div class="col-sm-3">
-          <h4 align="center">
-            <%= link_to "#{picture.title}", picture_path(picture) %>
-          </h4>
-          <%=link_to  picture_path(picture)  do %>
-            <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
+          
+          <h2>
+            Recent Comments:
+          </h2>
+          <% @user.comments.reverse.each do |comment|%>
+            On
+            <%= link_to "#{comment.picture.title},", picture_path(comment.picture) %>
+            <%= comment.created_at.strftime("%b %e, %Y") %>:
+            <br/>
+            <%= comment.content %>
+            <br/>
+            <br/>
           <% end %>
         </div>
-      <% end %>
+      </div>
+    </div>
+    <div class="col" style="padding-top: 1em;">
+      <div class="row">
+        <!-- <% @pictures.each do |picture|%>
+          <h3>
+            <%= link_to "#{picture.title}", picture_path(picture) %>
+          </h3>
+          <div style="padding-bottom: 60px;">
+            <%= link_to image_tag(picture.image_url), picture_path(picture) %>
+          </div>
+        <% end %> -->
+        <% @pictures.each do |picture|%>
+          <div class="col-sm-3">
+            <h4 align="center">
+              <%= link_to "#{picture.title}", picture_path(picture) %>
+            </h4>
+            <%=link_to  picture_path(picture)  do %>
+              <%= image_tag (picture.image_url), class:"img-fluid img-round", style: "max-width: 100%; height: auto;" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

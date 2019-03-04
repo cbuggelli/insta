@@ -3,24 +3,62 @@
 <%= render "shared/header", page: @title %>
 
 <% provide(:title, @title) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%=link_to image_tag(@user.profile_pic), @user%>
-      <h1><%= link_to @user.username, @user %></h1>
-      <span><%= link_to "View my profile", @user %></span>
-      <span><b>Pictures:</b> <%= @user.pictures.count %></span>
-    </section>
-    <section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if @users.any? %>
-      <ul class="users-follow">
-        <%= render @users %>
-      </ul>
-      <h2><%= will_paginate %></h2>
-    <% end %>
+
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-3">
+      <% if @user.id == current_user.id %>
+        <br/>
+        <div class="row">
+          <div class="col">
+            <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
+            <br/>
+            <%= button_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
+          </div>
+        </div>
+      <% end %>
+
+      <br/>
+      <div class="row">
+        <div class="col">
+          <div>
+            <%= image_tag @user.profile_pic, style: "max-width: 100%; height: auto;"%>
+          </div>
+          <br/>
+          <h3><%= link_to "Back to profile", @user %></h3>
+
+          <%= render 'follow_form' if logged_in? %>
+
+          <section class="stats">
+            <%= render 'shared/stats' %>
+          </section>
+          
+          <br/>
+          
+          <h2>Pictures: <%= @user.pictures.count %></h2>
+          <br/>
+          <h2>
+            Recent Comments:
+          </h2>
+          <% @user.comments.reverse.each do |comment|%>
+            On
+            <%= link_to "#{comment.picture.title},", picture_path(comment.picture) %>
+            <%= comment.created_at.strftime("%b %e, %Y") %>:
+            <br/>
+            <%= comment.content %>
+            <br/>
+            <br/>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="padding-top: 1em;">
+      <% if @users.any? %>
+        <ul class="users-follow">
+          <%= render @users %>
+        </ul>
+        <h2><%= will_paginate %></h2>
+      <% end %>
+    </div>
   </div>
 </div>
