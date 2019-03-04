@@ -13,7 +13,7 @@
           <div class="col">
             <%= button_to "Add a Picture", new_picture_path,  {class: 'btn btn-success btn-block btn-lg'} %>
             <br/>
-            <%= button_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
+            <%= link_to "Edit Profile", edit_user_path, {class: 'btn btn-warning btn-block btn-lg'} %>
           </div>
         </div>
       <% end %>
@@ -37,7 +37,7 @@
           <h2>Pictures: <%= @user.pictures.count %></h2>
 
           <br/>
-          
+
           <h2>
             Recent Comments:
           </h2>
