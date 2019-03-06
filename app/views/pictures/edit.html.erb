@@ -1,12 +1,19 @@
 <%= render "shared/header", page: "Edit Picture" %>
 
-<h1>Edit picture info</h1>
+<%= form_for @picture, html: { class: "form-horizontal right", align: "center" } do |f| %>
+  <h1>Edit picture info</h1>
+  <br/>
 
-<%= form_for @picture do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <%= f.submit "Confirm", {class: 'btn btn-primary btn-lg'} %>
 <% end %>
+
+<br/>
+
 <div align="center">
   <%= link_to "Cancel", picture_path(@picture), class: 'btn btn-danger btn-lg' %>
 </div>
